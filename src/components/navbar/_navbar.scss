@@ -1,0 +1,31 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  background: rgb(212, 221, 169);
+  align-items: center;
+  font-size: 22px;
+  padding-left: 10%;
+ 
+  a {
+    text-decoration: none;
+    margin: 10px;
+  }
+  &__link {
+    display: flex;
+    gap: 30px;
+   
+  }
+
+  padding: 10px;
+  align-self: flex-start;
+}
+.navBar__link a:hover {
+  font-weight: bold;
+  border-bottom: 2px solid green; /* Bordure au bas de l'onglet au survol */
+  transition: background-color 0.3s ease-in-out; /* Transition fluide lors du survol */
+}
+
+a.active {
+  font-weight: bold;
+  color: #50c476;
+}

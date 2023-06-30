@@ -1,25 +1,31 @@
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "pages/home/Home.jsx";
+import AddEmployee from "pages/addEmployee/AddEmployee.jsx";
+import ListEmployees from "pages/listEmployees/ListEmployees.jsx";
+import NotFound from "pages/notFound/NotFound.jsx";
+import Footer from "components/footer/Footer.js";
 import "./App.css";
+import "style/index.scss";
+import React from "react";
+import Navbar from 'components/navbar/Navbar.js';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+  
+        <Router>
+        <Navbar />
+          <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add_employee" element={<AddEmployee />} />
+          <Route path="/list_employees" element={<ListEmployees />} />
+          <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </>
+  
   );
-}
+};
 
 export default App;
