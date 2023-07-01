@@ -21,8 +21,9 @@ const App = () => {
           <Route path="/list_employees" element={<ListEmployees />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </Router>
-        <Footer />
+       
       </>
   
   );

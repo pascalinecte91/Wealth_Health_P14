@@ -1,14 +1,17 @@
 .navBar {
   display: flex;
   flex-direction: row;
-  background: rgb(212, 221, 169);
+  background: #6D841A;
   align-items: center;
   font-size: 22px;
   padding-left: 10%;
+  height: 65px;
  
   a {
     text-decoration: none;
     margin: 10px;
+    color:white;
+    font-weight: 600;
   }
   &__link {
     display: flex;
@@ -16,16 +19,10 @@
    
   }
 
-  padding: 10px;
-  align-self: flex-start;
-}
-.navBar__link a:hover {
-  font-weight: bold;
-  border-bottom: 2px solid green; /* Bordure au bas de l'onglet au survol */
-  transition: background-color 0.3s ease-in-out; /* Transition fluide lors du survol */
+&__link a:hover {
+  border-bottom: 2px solid #3a3a38; 
+  
 }
 
-a.active {
-  font-weight: bold;
-  color: #50c476;
 }
+  

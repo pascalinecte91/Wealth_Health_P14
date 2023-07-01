@@ -7,7 +7,18 @@
   justify-content: flex-start;
   gap: 12px;
   align-items: center;
- 
+ h1 {
+  font-size: 45px;
+  @include min-max ($tablet, $desktop - 1){
+    font-size: 29px;
+  }
+
+    @include  min-max ($smartphone, $smartLarge - 1 ) {
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+ }
+
 &__current {
 width: 80vw;
   height: 80vh;
@@ -15,64 +26,73 @@ width: 80vw;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid green;
-  border-radius: 4px;
+  border: 1px solid #94B229;
+  border-radius: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background:white;
-}
-&__content {
-  display: flex;
-  flex-direction: column;
-  
-}
-
-&__title {
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #333;
-  position: absolute;
-  top:15%
+  @include min-max ($smartphone, $smartLarge - 1) {
+    flex-direction: column;
+    border: none;
+ 
+  }
 
 }
+&__infos {
+  @include min-max ($smartphone, $smartLarge - 1) {
+    margin-top: 50%;
+  }
+}
+
 span  {
   display: flex;
   font-size: 35px;
   color: rgb(111, 143, 111);
+  @include min-max ($smartphone, $smartLarge - 1 ){
+    font-size: 19px;
+    line-height: 10px;
+  }
 }
 
 &__subtitle {
   margin-top: 8px;
-  font-size: 20px;
+  font-size: 25px;
   color: #666;
+  @include min-max($smartphone, $smartLarge - 1) {
+    font-size: 19px;
+  }
 }
 
-}
+
+
 
 
 .button {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 20px;
   gap: 8px;
-
   &__add {
   background-color: rgb(111, 143, 111);
   color: white;
   text-align: center;
-}
+  }
+  @include min-max($tablet, $desktop - 1){
+    
+   
+  }
+  
+
 
 &__view {
   background-color: white;
   color: rgb(111, 143, 111);
-  border: 1px solid rgb(111, 143, 111);
   text-align: center;
 
 }
@@ -81,6 +101,11 @@ span  {
   width: 100%;
   border-radius: 5px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 }
@@ -88,9 +113,28 @@ span  {
   display: flex;
   flex-direction: column;
   gap:4rem;
+  border: 1px solid rgb(129, 134, 129);
+  box-shadow: 1px 2px rgb(142, 143, 140);
+  margin: 10px;
+  @include min-max ($smartphone, $smartLarge - 1){
+    gap:inherit;
+  }
+  
   
 }
 .image {
-  width: 95%;
+  width: 100%;
 }
 
+.homePage__content {
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  @include min-max ($smartphone, $smartLarge - 1) {
+    display: inherit;
+    gap: inherit;
+  }
+}
+}

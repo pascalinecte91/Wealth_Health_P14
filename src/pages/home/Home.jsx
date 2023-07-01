@@ -10,10 +10,12 @@ const Home = () => {
   
         <main className="homePage__current">
           <div className="homePage__content">
+            <div className="homePage__infos">
             <h1 className="homePage__title">
               HRNet the app that manage
-              <span className="homePage__greenSpan"> your employees</span>
+              <span className="homePage__greenSpan"> your employees</span> <br />
             </h1>
+            </div>
             <p className="homePage__subtitle">Join us in creating your employee list</p>
             <div className="button">
               <a href="/add_employee" className="button__add">Create</a>
@@ -26,7 +28,7 @@ const Home = () => {
             <img className="image" src={picture_home} alt=" managmnt" />
           </div>
         </main>
-     
+  
       </section>
     </>
   );
