@@ -3,11 +3,13 @@ import logo  from "assets/logo_name.gif";
 import picture_home from "assets/picture_home.jpg"
 
 
+
+
 const Home = () => {
   return (
     <>
       <section className="homePage">
-  
+ 
         <main className="homePage__current">
           <div className="homePage__content">
             <div className="homePage__infos">

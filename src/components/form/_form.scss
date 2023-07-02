@@ -1,0 +1,19 @@
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  
+  .input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }

@@ -5,15 +5,15 @@ const Navbar = () => {
   return (
     <section className="navBar">
       <div className="navBar__link">
-        <NavLink to="/" activeClassName="active" end>
+        <NavLink to="/" className="active" end>
           Home
         </NavLink>
 
-        <NavLink to="/add_employee" activeClassName="active">
+        <NavLink to="/add_employee" className="active">
           Create Employee
         </NavLink>
 
-        <NavLink to="/list_employees" activeClassName="active">
+        <NavLink to="/list_employees" className="active">
           List Employees
         </NavLink>
         </div>
