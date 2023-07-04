@@ -2,9 +2,6 @@ import React from 'react';
 import logo  from "assets/logo_name.gif";
 import picture_home from "assets/picture_home.jpg"
 
-
-
-
 const Home = () => {
   return (
     <>
@@ -15,7 +12,7 @@ const Home = () => {
             <div className="homePage__infos">
             <h1 className="homePage__title">
               HRNet the app that manage
-              <span className="homePage__greenSpan"> your employees</span> <br />
+              <span className="homePage__greenSpan"> <br />👩‍🦰 Your employees 👩‍🦱</span> <br />
             </h1>
             </div>
             <p className="homePage__subtitle">Join us in creating your employee list</p>
