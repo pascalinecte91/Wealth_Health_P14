@@ -6,12 +6,10 @@
 ![npm](https://img.shields.io/badge/-npm-%23CB3837?logo=npm&logoColor=white)
 ![Redux](https://img.shields.io/badge/-Redux-%23764ABC?logo=redux&logoColor=white)
 ![Node.js](https://img.shields.io/badge/-Node.js-%23339933?logo=node.js&logoColor=white)
-[![Faker](https://img.shields.io/badge/Faker-1.9.1-blue)](https://github.com/fzaninotto/Faker)
 [![React Data Table Component](https://img.shields.io/badge/React%20Data%20Table%20Component-6.15.1-blue)](https://www.npmjs.com/package/react-data-table-component)
 [![JSDoc](https://img.shields.io/badge/JSDoc-3.6.7-blue)](https://www.npmjs.com/package/jsdoc)
-
-
-
+[![React Calendar](https://img.shields.io/badge/React%20Calendar-3.4.0-blue)](https://www.npmjs.com/package/react-calendar)
+[![React Icons](https://img.shields.io/badge/React%20Icons-4.2.0-orange)](https://www.npmjs.com/package/react-icons)
 
 <div style="text-align: center; width: 100%">
   <img src="src/assets/logo_name.gif" alt="logo" style="border-radius: 10px;">

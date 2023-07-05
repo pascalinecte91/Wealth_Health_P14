@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /**
  * @component fonctionnel React qui affiche le copyright et l'année actuelle.
