@@ -50,6 +50,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "faker": "^6.6.6",
+    "gh-pages": "^5.0.0",
     "jsdoc": "^4.0.2"
   }
 }

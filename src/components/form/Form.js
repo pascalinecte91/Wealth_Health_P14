@@ -3,6 +3,15 @@ import DatePicker from "components/calendar/DatePicker";
 import { states } from "data/states.js";
 import departments from "data/departments";
 
+/**
+ * Formulaire pour ajouter un nouvel employé.
+ *
+ * @param {Object} props - Les propriétés passées au composant.
+ * @param {Function} props.handleNewEmployee -utilisé comme callback pour gerer l'ajout d'un new employed lorsque form soumis
+ * @param {Function} props.setIsVisible -Utilisé comme callback pour définir la visibilité du formulaire
+ * @returns {JSX.Element} Composant de formulaire.
+ */
+
 const Form = ({ handleNewEmployee, setIsVisible }) => {
   const initialState = {
     firstName: "",
@@ -16,27 +25,52 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     department: "",
   };
 
+  /**
+   * @initialise l état dans le composant form
+   * @function renvoi un [2 elements, la valeur actuelle = formData, et setFormData pour la màj]
+   */
   const [formData, setFormData] = React.useState(initialState);
   console.log(formData);
 
+   /**
+   * Gère les modifications de date pour les composants DatePicker.
+   *
+   * @param {string} name - Nom du champ de saisie de date.
+   * @param {string} value - Valeur de la date sélectionnée.
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
+    // Met à jour le formulaire avec les nouvelles valeurs saisies
+    // prevFormData garantie  mises à jour d'état correcte
+    setFormData((prevFormData) => ({ 
       ...prevFormData,
       [name]: value,
     }));
   };
 
+   /**
+   * Gère les modifications de @date pour les "@composants DatePicker".
+   *
+   * @param {string} name - Nom du champ de saisie de date.
+   * @param {string} value - Valeur de la date sélectionnée.
+   */
   const handleDateChange = (name, value) => {
-    console.log("handleDateChange called with", name, value);
-    console.log("formData.dateOfBirth:", formData.dateOfBirth);
-    console.log("formData.startDate:", formData.startDate);
+    //console.log("handleDateChange called with", name, value);
+    //console.log("formData.dateOfBirth:", formData.dateOfBirth);
+    //console.log("formData.startDate:", formData.startDate);
+    
+    // Met à jour le formulaire avec la new value de @date sélectionnée
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
   };
 
+   /**
+   * Gère la soumission du formulaire pour ajouter un nouvel employé.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e - Événement de soumission du formulaire.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     handleNewEmployee(formData);
@@ -137,7 +171,6 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
                   {states.map((state) => (
                     <option key={state.abbreviation} value={state.abbreviation}>
                       {state.name}
-                      
                     </option>
                   ))}
                 </select>
@@ -156,7 +189,7 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
               </div>
             </fieldset>
           </div>
-      
+
           <label htmlFor="department">Department</label>
           <select
             required
@@ -177,7 +210,7 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
           </select>
 
           <br />
-          <button className="save">Save</button>
+          <button className="form__save">Save</button>
         </form>
       </section>
     </>

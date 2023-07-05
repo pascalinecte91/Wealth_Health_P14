@@ -20,7 +20,7 @@ const AddEmployee = () => {
   }, [employed]);
 
   /**
-   * Fonction pour gérer l'ajout d'un nouvel employé à la liste.
+   * @Fonction pour gérer l'ajout d'un nouvel employé à la liste.
    * @param {Object} employeeData - Les données du nouvel employé.
    */
   const handleNewEmployee = (employeeData) => {

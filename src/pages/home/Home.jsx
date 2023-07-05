@@ -2,6 +2,10 @@ import React from 'react';
 import logo  from "assets/logo_name.gif";
 import picture_home from "assets/picture_home.jpg"
 
+/**
+ * @Composant de la page d'accueil.
+ * @returns {JSX.Element} Composant de la page d'accueil.
+ */
 const Home = () => {
   return (
     <>

@@ -3,7 +3,8 @@
   margin: 10px auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
+
   &__card {
     background-color: $greenLight;
     border-radius: 5px;
@@ -11,13 +12,43 @@
     display: block;
     margin-bottom: 10px;
   }
+
   &__address {
     border: none;
     padding: 5px;
   }
+
   &__addressCenter {
     text-align: center;
     display: flex;
+  }
+
+  &__save {
+    background: linear-gradient(to right, #97ad9a, #087129);
+    background-color: #97ad9a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 15px;
+    border: 0px solid $greenButton;
+    border-radius: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+  }
+  &__save:hover {
+    background: linear-gradient(to right, #a4b7a7, #51865a);
+    background-color: #a4b7a7;
+  }
+
+  &__save:active {
+    transform: scale(0.95);
   }
 }
 
@@ -27,11 +58,13 @@
   margin-bottom: 15px;
   flex-wrap: wrap;
 }
+
 label {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 13px;
 }
+
 .input,
 .input_datepicker {
   width: 400px;
@@ -39,69 +72,32 @@ label {
   border: 1px solid #ccc;
   border-radius: 3px;
   box-sizing: border-box;
-  @include min-max($smartphone, $smartLarge - 1 ){
+
+  @include min-max($smartphone, $smartLarge - 1) {
     width: 350px;
   }
-
 }
 
 #create_employee {
   margin: 5px;
   width: 400px;
   height: 100%;
-  @include min-max($smartphone, $smartLarge - 1 ){
+
+  @include min-max($smartphone, $smartLarge - 1) {
     width: 350px;
   }
 }
 
-.save {
-  display: block;
-  margin: 10px auto;
-  width: 100px;
-  height: 35px;
-  background-color: $greenLight;
-  border: none;
-  border-radius: 5px;
-}
-.save:hover {
-  background-color: #4caf50;
-  color: white;
-}
-
-
-.save{
-  background: linear-gradient(to right,#97ad9a ,#087129);
-  background-color: #97ad9a;
-  color: #fff;
-  font-family: Trebuchet MS;
-  font-size: 15px;
-  font-weight: 800;
-  text-decoration: none;
-  padding: 14px 15px;
-  border: 0px solid $greenButton;
-  border-radius: 5px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
- }
-.save:hover{
-  background: linear-gradient(to right,#a4b7a7 ,#51865a);
-  background-color: #a4b7a7;
- }
- .save:active{
-  transform: scale(0.95);
- }
-
- aside {
-  @include min-max($smartphone, $smartLarge - 1 ){
+aside {
+  @include min-max($smartphone, $smartLarge - 1) {
     width: 350px;
   }
- }
+}
 
- select option {
+select option {
   background-color: $greenLight;
- }
+}
 
- select#state option {
+select#state option {
   width: 100px;
- }
+}
