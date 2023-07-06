@@ -8,11 +8,13 @@ import "./App.css";
 import "style/index.scss";
 import React from "react";
 import Navbar from 'components/navbar/Navbar.js';
+import isPropValid from '@emotion/is-prop-valid';
+import { StyleSheetManager } from 'styled-components';
 
 const App = () => {
   return (
       <>
-  
+  <StyleSheetManager shouldForwardProp={isPropValid}>
         <Router>
         <Navbar />
           <Routes>
@@ -23,7 +25,7 @@ const App = () => {
           </Routes>
           <Footer />
         </Router>
-       
+        </StyleSheetManager>
       </>
   
   );
