@@ -8,13 +8,13 @@ import ReactPaginate from 'react-paginate';
  * @param {Object} props - L'objet des propriétés.
  * @param {number} props.pageCount - Le nombre total de pages.
  * @param {number} props.currentPage - Le numéro de la page actuelle (indexé à partir de 0).
- * @param {function} props.onPageChange - La fonction à appeler lorsque la page change.
+ * @param {function} props.onPageChange - appelée lorsque la page change.
  */
 const Pagination = ({ pageCount, currentPage, onPageChange }) => (
     <ReactPaginate
     pageCount={pageCount}
-    pageRangeDisplayed={5}
-    marginPagesDisplayed={2}
+    pageRangeDisplayed={5} // affiche 5 pages à la fois
+    marginPagesDisplayed={2} // 2 pages au bout
     onPageChange={({ selected }) => onPageChange(selected)}
     forcePage={currentPage}
     containerClassName="pagination"

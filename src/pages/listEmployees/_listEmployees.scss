@@ -16,8 +16,10 @@
     }
     width: 80vw;
     margin: auto;
+    height: 200px;
   }
   &__logo {
+    width: 200px;
     @include min-max($smartphone, $smartLarge - 1) {
       width: 100px;
     }
