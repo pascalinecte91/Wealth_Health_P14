@@ -21,6 +21,9 @@
     &__name,
     &__title {
       color: $green;
+      @include min-max($smartphone, $smartLarge - 1 ) {
+        display: none;
+      }
     }
   }
 

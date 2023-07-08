@@ -4,12 +4,18 @@
   background: #458846;
   align-items: center;
   font-size: 22px;
-  padding-left: 10%;
   height: 65px;
   @include min-max($smartphone, $smartLarge - 1) {
     font-size: 15px;
+    justify-content: space-evenly;
   }
-
+  @include min-max($smartLarge, $tablet - 1){
+    justify-content: space-evenly;
+    
+  }
+  @include min-max($smartLarge, $desktop - 1){
+    font-size: 19px;
+  }
   a {
     text-decoration: none;
     margin: 10px;

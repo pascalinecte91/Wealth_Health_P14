@@ -1,13 +1,16 @@
 @import "style/mixins";
 @import "style/settings";
 
+/*** COMPONENTS ***/
 @import "components/navbar/navbar";
 @import "components/footer/footer";
 @import "components/form/form";
 @import "components/calendar/datepicker";
 @import "components/pagination/pagination";
 @import "components/search/employeeSearch";
+@import "components/customDataTable/custom";
 
+/*** PAGES ***/
 @import "pages/home/home";
 @import "pages/addEmployee/addEmployee";
 @import "pages/listEmployees/listEmployees";

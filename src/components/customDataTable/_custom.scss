@@ -1,0 +1,104 @@
+.evciuT {
+  display: flex;
+  flex-wrap: wrap;
+  display: initial !important;
+}
+
+.dlwJhk {
+  display: flex;
+}
+
+.dUdLgu {
+  display: flex;
+  align-content: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+  min-height: 48px;
+  flex-wrap: wrap;
+}
+
+.sc-gswNZR.dAZYal {
+  @include min-max($smartLarge, $tablet -1) {
+    font-size: 12px;
+  }
+}
+
+.sc-bdDrbm.eBwetW.rdt_Table {
+  width: 90%;
+}
+
+.jTIGcE {
+  overflow: visible !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+
+.rdt_TableCol[data-column-id="8"],
+.rdt_TableCol[data-column-id="9"],
+.rdt_TableCol[data-column-id="4"],
+.rdt_TableCol[data-column-id="7"],
+.rdt_TableCol[data-column-id="5"],
+.rdt_TableCol[data-column-id="6"] {
+  @include min-max($smartphone, $smartLarge - 1) {
+    display: none;
+  }
+}
+
+.rdt_TableCol[data-column-id="8"],
+.rdt_TableCol[data-column-id="9"],
+.rdt_TableCol[data-column-id="4"],
+.rdt_TableCol[data-column-id="7"],
+.rdt_TableCol[data-column-id="5"],
+.rdt_TableCol[data-column-id="6"] {
+  @include min-max($smartLarge, $tablet - 1) {
+    display: none;
+  }
+}
+
+.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="6"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="4"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"] {
+  @include min-max($smartphone, $smartLarge - 1) {
+    display: none;
+  }
+}
+
+.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="6"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="4"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"] {
+  @include min-max($smartLarge, $tablet - 1) {
+    display: none;
+  }
+}
+
+.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"] {
+  @include min-max($tablet, $desktop - 1) {
+    display: none;
+  }
+}
+
+.rdt_TableCol[data-column-id="8"],
+.rdt_TableCol[data-column-id="9"],
+.rdt_TableCol[data-column-id="7"] {
+  @include min-max($tablet, $desktop - 1) {
+    display: none;
+  }
+}
+
+.rdt_TableCol[data-column-id="8"],
+.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"] {
+  width: 50px;
+}

@@ -11,6 +11,7 @@
 [![React Calendar](https://img.shields.io/badge/React%20Calendar-3.4.0-blue)](https://www.npmjs.com/package/react-calendar)
 [![React Icons](https://img.shields.io/badge/React%20Icons-4.2.0-orange)](https://www.npmjs.com/package/react-icons)
 
+
 <div style="text-align: center; width: 100%">
   <img src="src/assets/logo_name.gif" alt="logo" style="border-radius: 10px;">
 
@@ -27,6 +28,7 @@
 - react-dom: version 18.2.0
 - repository clone before conversion [link](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
 - ![Built with Visual Studio Code](https://img.shields.io/badge/Built%20with-Visual%20Studio%20Code-blue)
+- "react-search-box": "^3.0.0"
 ---
 
 You work for the technology department of a large financial company, WealthHealth. 

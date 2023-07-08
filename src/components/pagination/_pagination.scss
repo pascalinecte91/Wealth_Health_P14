@@ -5,10 +5,15 @@
     padding: 0;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 50px;
-    position: fixed;
-    bottom: 3%;
-    left: 45%;
+   flex-wrap: wrap;
+   justify-content: center;
+   font-size: 15px;
+   position: absolute;
+   bottom: 6%;
+   left: 40%;
+   @include min-max($smartphone, $smartLarge - 1 ) {
+    left: 24%;
+   }
   }
   
   .page-item a {

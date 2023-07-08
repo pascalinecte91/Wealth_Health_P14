@@ -49,7 +49,7 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
   };
 
    /**
-   * Gère les modifications de @date pour les "@composants DatePicker".
+   * Gère les modifications de date pour les composants DatePicker".
    *
    * @param {string} name - Nom du champ de saisie de date.
    * @param {string} value - Valeur de la date sélectionnée.

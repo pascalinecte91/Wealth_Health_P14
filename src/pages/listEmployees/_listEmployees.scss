@@ -1,6 +1,5 @@
 .list {
   margin-top: 20px;
-  margin-bottom: 50px;
 
   &__header {
     display: flex;
@@ -9,29 +8,35 @@
     justify-content: space-evenly;
     box-shadow: $greenLight 0px 1px 2px, $greenLight 0px 2px 4px,
       $greenLight 0px 4px 8px, $greenLight 0px 8px 16px;
-    @include min-max($smartphone, $smartLarge - 1) {
-      box-shadow: none;
-      font-size: 15px;
-      flex-direction: column;
-    }
     width: 80vw;
     margin: auto;
     height: 200px;
+
+    @include min-max($smartphone, $smartLarge - 1) {
+      font-size: 15px;
+      flex-direction: column;
+      box-shadow: none;
+      height: 100px;
+    }
   }
+
   &__logo {
     width: 200px;
+
     @include min-max($smartphone, $smartLarge - 1) {
       width: 100px;
     }
   }
 }
+
 table {
   border-collapse: collapse;
   width: 80%;
   margin: auto;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
@@ -41,9 +46,10 @@ tr:nth-child(even) {
 }
 
 th {
-  background-color:$greenButton;
+  background-color: $greenButton;
   color: white;
 }
 
-
-
+.uppercase {
+  text-transform: capitalize;
+}

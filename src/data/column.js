@@ -1,3 +1,10 @@
+/**
+ * @Définition de la colonne "First Name".
+ * Cette colonne affiche le prénom de l'employé avec la première lettre en majuscule.
+ * La colonne est triable par défaut.
+ *
+ * @type {import("react-data-table-component").Column<object>}
+ */
 export const columns = [
   // props definie sur true pour definir le tri sur la colonne en question
   {
@@ -5,6 +12,8 @@ export const columns = [
     selector: (row) => row.firstName,
     sortable: true,
     sortFunction: (a, b) => a.firstName.localeCompare(b.firstName),
+    cell: (row) => <span>{row.firstName.charAt(0).toUpperCase() + row.firstName.slice(1)}</span>,
+
   },
   {
     name: "Last Name",

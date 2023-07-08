@@ -1,7 +1,8 @@
 $smartphone: 320px;
 $smartLarge: 525px;
+$miniTab:624px;
 $tablet: 768px;
-$desktop: 1025px;
+$desktop: 1024px;
 $big-desktop: 1380px;
 $bigBig: 1441px;
 $SuperBig : 1660px;
@@ -15,6 +16,11 @@ $SuperBig : 1660px;
     @media only screen and (min-width: $SuperBig) {
       @content;
     }
+  }
+    @mixin desk {
+      @media only screen and (min-width: $desktop) {
+        @content;
+      }
   
 }
 
