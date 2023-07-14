@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import DatePicker from "components/calendar/DatePicker";
 import { states } from "data/states.js";
 import departments from "data/departments";
+import { Modal } from "banby-modal-customize-react";
 
 /**
  * Formulaire pour ajouter un nouvel employé.
@@ -29,10 +30,25 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
    * @initialise l état dans le composant form
    * @function renvoi un [2 elements, la valeur actuelle = formData, et setFormData pour la màj]
    */
-  const [formData, setFormData] = React.useState(initialState);
-  console.log(formData);
+  const [formData, setFormData] = useState(initialState);
+  //console.log(formData);
+  const resetForm = () => {
+    setFormData(initialState);
+  };
 
-   /**
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    //console.log("firstName:", formData.firstName);
+    //console.log("lastName:", formData.lastName);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  /**
    * Gère les modifications de date pour les composants DatePicker.
    *
    * @param {string} name - Nom du champ de saisie de date.
@@ -42,13 +58,13 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     const { name, value } = e.target;
     // Met à jour le formulaire avec les nouvelles valeurs saisies
     // prevFormData garantie  mises à jour d'état correcte
-    setFormData((prevFormData) => ({ 
+    setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
   };
 
-   /**
+  /**
    * Gère les modifications de date pour les composants DatePicker".
    *
    * @param {string} name - Nom du champ de saisie de date.
@@ -58,15 +74,22 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     //console.log("handleDateChange called with", name, value);
     //console.log("formData.dateOfBirth:", formData.dateOfBirth);
     //console.log("formData.startDate:", formData.startDate);
-    
+
     // Met à jour le formulaire avec la new value de @date sélectionnée
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-   /**
+  const handleSave = () => {
+    // code pour gérer l'action du bouton "Enregistrer"
+    handleCloseModal();
+  };
+
+  const handleCancel = () => {
+    // code pour annuler les modifications du formulaire
+    console.log("Modifications du formulaire annulées");
+    handleCloseModal();
+  };
+  /**
    * Gère la soumission du formulaire pour ajouter un nouvel employé.
    *
    * @param {React.FormEvent<HTMLFormElement>} e - Événement de soumission du formulaire.
@@ -75,7 +98,8 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     e.preventDefault();
     handleNewEmployee(formData);
     setIsVisible(true);
-    setFormData(initialState);
+    resetForm();
+    handleOpenModal();
   };
 
   return (
@@ -212,6 +236,26 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
           <br />
           <button className="form__save">Save</button>
         </form>
+
+        <Modal
+          isOpen={modalOpen}
+          onClose={handleCloseModal}
+          modalClassName="my-custom-modal-class"
+          modalTitle="My Modal Title"
+          firstName={formData.firstName}
+          lastName={formData.lastName}
+          onCancel={handleCancel}
+          onSave={handleSave}
+        >
+          {modalOpen && (
+            <div className="modal-content">
+              <h2 className="modal-title">
+                {formData.firstName} {formData.lastName}
+              </h2>
+              {/* Autres éléments du contenu de la modal */}
+            </div>
+          )}
+        </Modal>
       </section>
     </>
   );

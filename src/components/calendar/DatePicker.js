@@ -58,7 +58,7 @@ const DatePicker = ({
       <div className="input-container">
         <input
           className="input_datepicker"
-          required
+       
           pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
           id={id}
           type="text"

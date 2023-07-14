@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 800px;
+  
 
   &__card {
     background-color: $greenLight;
@@ -67,7 +69,7 @@ label {
 
 .input,
 .input_datepicker {
-  width: 400px;
+  width: 450px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -80,7 +82,7 @@ label {
 
 #create_employee {
   margin: 5px;
-  width: 400px;
+  width: 450px;
   height: 100%;
 
   @include min-max($smartphone, $smartLarge - 1) {

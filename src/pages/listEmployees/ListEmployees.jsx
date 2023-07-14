@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "assets/logo_name.gif";
+import logo from "assets/logo_name.png";
 import mockEmployed from "data/mockEmployed.js";
 import { columns } from "data/column.js";
 import Pagination from "components/pagination/Pagination.js";

@@ -1,12 +1,25 @@
-import React from 'react';
-import logo  from "assets/logo_name.gif";
-import picture_home from "assets/picture_home.jpg"
+import React, { useState, useEffect } from 'react';
+import logo  from "assets/logo_name.png";
+import picture_home from "assets/picture_home.png"
+import Spinner from 'components/spinner/Spinner.js';
 
 /**
  * @Composant de la page d'accueil.
  * @returns {JSX.Element} Composant de la page d'accueil.
  */
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    
+    }, 2000);
+  }, []);
+  if (isLoading) {
+    return <Spinner />;
+  } else {
+
   return (
     <>
       <section className="homePage">
@@ -35,6 +48,7 @@ const Home = () => {
       </section>
     </>
   );
+  }
 };
 
 export default Home;

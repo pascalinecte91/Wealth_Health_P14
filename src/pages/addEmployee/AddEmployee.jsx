@@ -18,6 +18,7 @@ const AddEmployee = () => {
   React.useEffect(() => {
     console.log("employed state updated:", employed);
   }, [employed]);
+  
 
   /**
    * @Fonction pour gérer l'ajout d'un nouvel employé à la liste.
