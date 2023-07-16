@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import DatePicker from "components/calendar/DatePicker";
 import { states } from "data/states.js";
 import departments from "data/departments";
-import { Modal } from "banby-modal-customize-react";
+import { Modal }  from "banby-modal-customize-react";
+import { useDispatch } from 'react-redux';
+
 
 /**
  * Formulaire pour ajouter un nouvel employé.
@@ -14,6 +16,7 @@ import { Modal } from "banby-modal-customize-react";
  */
 
 const Form = ({ handleNewEmployee, setIsVisible }) => {
+  const dispatch = useDispatch();
   const initialState = {
     firstName: "",
     lastName: "",
@@ -28,23 +31,31 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
 
   /**
    * @initialise l état dans le composant form
-   * @function renvoi un [2 elements, la valeur actuelle = formData, et setFormData pour la màj]
+   * @function renvoi un [2 elements, la valeur actuelle = formData ( donnees du form) et setFormData pour la màj]
    */
   const [formData, setFormData] = useState(initialState);
+
   //console.log(formData);
-  const resetForm = () => {
-    setFormData(initialState);
+  const resetForm = () => {setFormData(initialState);
   };
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [employeeCreated, setEmployeeCreated] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  // const modalTitle = `Bienvenue à toi ${lastName} !`;
+  const modalTitle =  `Congratulations ! Completed form`
+  
+
+console.log(firstName);
 
   const handleOpenModal = () => {
-    //console.log("firstName:", formData.firstName);
-    //console.log("lastName:", formData.lastName);
+    console.log("handleOpenModal called with formData:", formData);
     setModalOpen(true);
   };
-
+console.log(formData);
   const handleCloseModal = () => {
+    console.log("handleCloseModal called with formData:", formData);
     setModalOpen(false);
   };
 
@@ -56,8 +67,8 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
    */
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Met à jour le formulaire avec les nouvelles valeurs saisies
-    // prevFormData garantie  mises à jour d'état correcte
+    setFirstName(formData.firstName);
+    setLastName(formData.lastName);
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
@@ -71,7 +82,7 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
    * @param {string} value - Valeur de la date sélectionnée.
    */
   const handleDateChange = (name, value) => {
-    //console.log("handleDateChange called with", name, value);
+    console.log("handleDateChange called with", name, value);
     //console.log("formData.dateOfBirth:", formData.dateOfBirth);
     //console.log("formData.startDate:", formData.startDate);
 
@@ -100,8 +111,11 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     setIsVisible(true);
     resetForm();
     handleOpenModal();
+    setEmployeeCreated(true);
+    dispatch({ type: 'SET_EMPLOYEE', employee: formData });
+    console.log(dispatch);
   };
-
+  
   return (
     <>
       <section className="form">
@@ -241,21 +255,13 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
           isOpen={modalOpen}
           onClose={handleCloseModal}
           modalClassName="my-custom-modal-class"
-          modalTitle="My Modal Title"
-          firstName={formData.firstName}
-          lastName={formData.lastName}
+          modalTitle={modalTitle}
+          firstName={firstName}
+          lastName={lastName}
           onCancel={handleCancel}
           onSave={handleSave}
-        >
-          {modalOpen && (
-            <div className="modal-content">
-              <h2 className="modal-title">
-                {formData.firstName} {formData.lastName}
-              </h2>
-              {/* Autres éléments du contenu de la modal */}
-            </div>
-          )}
-        </Modal>
+          employeeCreated={employeeCreated}
+        />
       </section>
     </>
   );

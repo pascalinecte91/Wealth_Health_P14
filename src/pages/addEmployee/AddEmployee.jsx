@@ -16,7 +16,7 @@ const AddEmployee = () => {
 
   //afficher la liste des employés dans l'inspecteur chaque fois que l'état employed change
   React.useEffect(() => {
-    console.log("employed state updated:", employed);
+    //console.log("employed state updated:", employed);
   }, [employed]);
   
 
@@ -25,7 +25,7 @@ const AddEmployee = () => {
    * @param {Object} employeeData - Les données du nouvel employé.
    */
   const handleNewEmployee = (employeeData) => {
-    console.log("handleNewEmployee called with", employeeData);
+    //console.log("handleNewEmployee called with", employeeData);
     setEmployed([...employed, employeeData]);
     // Met à jour l'état isVisible pour afficher le message de succes!
     setIsVisible(true);

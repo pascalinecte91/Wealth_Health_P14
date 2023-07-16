@@ -13,7 +13,7 @@
 
 
 <div style="text-align: center; width: 100%">
-  <img src="src/assets/logo_name.gif" alt="logo" style="border-radius: 10px;">
+  <img src="src/assets/logo_name.png" alt="logo" style="border-radius: 10px;">
 
 </div>
 

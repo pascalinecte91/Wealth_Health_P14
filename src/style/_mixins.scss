@@ -21,9 +21,12 @@ $SuperBig : 1660px;
       @media only screen and (min-width: $desktop) {
         @content;
       }
-  
 }
-
+@mixin bigbig {
+  @media only screen and (min-width: $bigBig) {
+    @content;
+  }
+}
 // colors
 
 $green: #458846 ;

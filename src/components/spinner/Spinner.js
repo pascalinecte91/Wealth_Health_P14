@@ -1,5 +1,3 @@
-
-
 const Spinner = () => {
   return (
     <section className="spinner">

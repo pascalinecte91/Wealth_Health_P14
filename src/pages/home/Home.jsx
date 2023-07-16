@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import logo  from "assets/logo_name.png";
 import picture_home from "assets/picture_home.png"
-import Spinner from 'components/spinner/Spinner.js';
-
+import Spinner from "components/spinner/Spinner.js";
+import groupe from "assets/groupe.png";
 /**
  * @Composant de la page d'accueil.
  * @returns {JSX.Element} Composant de la page d'accueil.
@@ -14,7 +14,7 @@ const Home = () => {
     setTimeout(() => {
       setIsLoading(false);
     
-    }, 2000);
+    }, 1000);
   }, []);
   if (isLoading) {
     return <Spinner />;
@@ -27,10 +27,10 @@ const Home = () => {
         <main className="homePage__current">
           <div className="homePage__content">
             <div className="homePage__infos">
-            <h1 className="homePage__title">
-              HRNet the app that manage
-              <span className="homePage__greenSpan"> <br />👩‍🦰 Your employees 👩‍🦱</span> <br />
-            </h1>
+            <h1 className="homePage__title">HRNet the app that manage </h1>
+              <span className="homePage__greenSpan"> <br />
+                <h4>Your employees</h4></span>  
+                <img className="homePage__group" src={groupe} alt="logo HRnet" /> 
             </div>
             <p className="homePage__subtitle">Join us in creating your employee list</p>
             <div className="button">
