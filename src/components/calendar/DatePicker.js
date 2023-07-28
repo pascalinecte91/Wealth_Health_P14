@@ -1,11 +1,10 @@
-import React from "react";
-import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
-import { FaCalendarAlt as CalendarIcon } from 'react-icons/fa';
-
+import React, { useState, useRef, useEffect } from "react"; // Importation des hooks useState, useRef et useEffect de React
+import Calendar from "react-calendar"; // Importation du composant Calendar
+import "react-calendar/dist/Calendar.css"; // Importation des styles CSS du composant Calendar
+import { FaCalendarAlt as CalendarIcon } from "react-icons/fa"; // Importation de l'icône du calendrier depuis les react-icons
 
 /**
- * @component fonctionnel React qui affiche un champ de saisie de date avec un calendrier.
+ * @Composant fonctionnel React qui affiche un champ de saisie de date avec un calendrier.
  * @param {Object} props - Les propriétés passées au composant DatePicker.
  * @param {string} props.id - L'identifiant du champ de saisie.
  * @param {string} props.content - Le contenu du label.
@@ -13,44 +12,72 @@ import { FaCalendarAlt as CalendarIcon } from 'react-icons/fa';
  * @param {string} props.date - La date sélectionnée.
  * @param {Function} props.handleChange - La fonction à exécuter lors du changement de la date.
  * @param {Function} props.handleDateChange - La fonction à exécuter lors de la sélection d'une date dans le calendrier.
- * @param {string} props.placeholder - Le texte d'espace réservé pour le champ de saisie.
- * @returns {JSX.Element} Le composant DatePicker.
- * @example
- * @return (
- *  DatePicker < id="date" content="Date" name="date" date="01/01/2021" handleChange={handleChange} handleDateChange={handleDateChange} placeholder="JJ/MM/AAAA" />
- * )
  */
 const DatePicker = ({
-  id, content, name, date, handleChange, handleDateChange, placeholder}) => {
-     /**
-   * La date sélectionnée.
-   * @type {Date}
-   */
-  const [value, setValue] = React.useState(new Date());
+  id,
+  content,
+  name,
+  date,
+  handleChange,
+  handleDateChange,
+  placeholder,
+}) => {
+  //  gérer la valeur du calendrier
+  const [value, setValue] = useState(new Date());
 
-  /**
-   * @Indique si le calendrier est visible ou non.
-   * @type {boolean}
-   */
-  const [visible, setVisible] = React.useState(false);
+  // État : si le calendrier est visible ou non
+  const [visible, setVisible] = useState(false);
 
-  /**
-   * @Affiche le calendrier.
-   */
+  // Référence à l'élément du calendrier pour le clic en dehors du composant
+  const calendarDate = useRef(null);
+
+  // affiche le calendrier
   const showCalendar = () => {
     setVisible(true);
   };
 
-
-  /**
-   * @Ferme le calendrier et met à jour la date sélectionnée.
-   * @param {Date} value La - date sélectionnée.
-   */
+  // pour fermer le calendrier et mettre à jour la date sélectionnée
   const closeCalendar = (value) => {
     setValue(value);
     setVisible(false);
-    handleDateChange(name, value.toLocaleDateString());
+    handleDateChange(name, formatDate(value));
   };
+
+  // formater la date en "JJ/MM/AAAA" qui n'est pas dans le component externe
+  const formatDate = (date) => {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  // pour le changement de l'input de la date
+  const handleInputChange = (e) => {
+    handleChange(e);
+  };
+
+  // la fermeture du calendrier en dehors du composant quad on clic
+  useEffect(() => {
+    // handleClickOutside va détecter les clics en dehors du calendrier.
+    // handleClickOutside  détecte si on a cliqué en dehors du calendrier (calendarDate.current).
+  // Si oui, le calendrier est caché  la valeur à false. 
+//ferme le calendrier auclique en dehors.
+
+    const handleClickOutside = (e) => {
+ 
+      if (calendarDate.current && !calendarDate.current.contains(e.target)) {
+        setVisible(false); // calendrier false visible ou pas
+    // calendarDate.current.contains(e.target)va si l'élément qu on  a cliqué (e.target)
+    // est à l'intérieur  du calendrier (calendarDate.current). 
+      }
+      console.log(handleClickOutside);
+    };
+    // j'ajoute un ecouteur d'evenment en utilisant mousedown pour le clic souris
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div>
@@ -58,18 +85,18 @@ const DatePicker = ({
       <div className="input-container">
         <input
           className="input_datepicker"
-       
           pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
           id={id}
           type="text"
           name={name}
           value={date}
-          onChange={handleChange}
+          onChange={handleInputChange}
           onClick={showCalendar}
           placeholder={placeholder}
         />
+        {/* Affichage du calendrier si visible */}
         {visible && (
-          <div className="calendar-container">
+          <div ref={calendarDate} className="calendar-container">
             <Calendar
               onChange={closeCalendar}
               value={value}
@@ -78,6 +105,7 @@ const DatePicker = ({
             />
           </div>
         )}
+
         <div className="icon-container">
           <CalendarIcon className="calendar-icon" onClick={showCalendar} />
         </div>

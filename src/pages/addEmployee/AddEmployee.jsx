@@ -16,7 +16,7 @@ const AddEmployee = () => {
 
   //afficher la liste des employés dans l'inspecteur chaque fois que l'état employed change
   React.useEffect(() => {
-    //console.log("employed state updated:", employed);
+    console.log("employed state updated:", employed);
   }, [employed]);
   
 
@@ -35,14 +35,13 @@ const AddEmployee = () => {
     <>
       <section className="create">
         <div className="create__wrapperForm">
-        <img className="create__logo" src={logo} alt="" />
         <h1 className="create__name">HRNet</h1>
+        <img className="create__logo" src={logo} alt="" />
         <h2 className="create__title">Create Employee</h2>
         </div>
         <Form handleNewEmployee={handleNewEmployee} setIsVisible={setIsVisible}
         />
         {isVisible && <p>Employé ajouté avec succès !</p>}
-       
       </section>
     </>
   );

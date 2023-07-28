@@ -26,7 +26,7 @@
 - npm version :  6.14.16
 - react: version 18.2.0
 - react-dom: version 18.2.0
-- repository clone before conversion [link](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
+- repository clone before conversion [Link](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
 - ![Built with Visual Studio Code](https://img.shields.io/badge/Built%20with-Visual%20Studio%20Code-blue)
 - "react-search-box": "^3.0.0"
 ---
@@ -74,8 +74,7 @@ The company uses an internal web application called HRnet, which manages employe
 ---
 
 ## Run project
-- [fork](https://github.com/pascalinecte91/Wealth_Health_P14)  or [clone](https://github.com/dahisland/wealth-health.git)  this repo 
-
+- [fork or clone](https://github.com/pascalinecte91/Wealth_Health_P14) repository
 - open folder in your IDE
 - npm install
 - npm start

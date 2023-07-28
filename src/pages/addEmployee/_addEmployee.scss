@@ -5,10 +5,10 @@
 
   &__wrapperForm {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: nowrap;
     align-content: stretch;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
     &__logo {

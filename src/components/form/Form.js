@@ -35,7 +35,6 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
    */
   const [formData, setFormData] = useState(initialState);
 
-  //console.log(formData);
   const resetForm = () => {setFormData(initialState);
   };
 
@@ -43,17 +42,12 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
   const [employeeCreated, setEmployeeCreated] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  // const modalTitle = `Bienvenue à toi ${lastName} !`;
   const modalTitle =  `Congratulations ! Completed form`
-  
-
-console.log(firstName);
 
   const handleOpenModal = () => {
     console.log("handleOpenModal called with formData:", formData);
     setModalOpen(true);
   };
-console.log(formData);
   const handleCloseModal = () => {
     console.log("handleCloseModal called with formData:", formData);
     setModalOpen(false);
@@ -113,7 +107,6 @@ console.log(formData);
     handleOpenModal();
     setEmployeeCreated(true);
     dispatch({ type: 'SET_EMPLOYEE', employee: formData });
-    console.log(dispatch);
   };
   
   return (

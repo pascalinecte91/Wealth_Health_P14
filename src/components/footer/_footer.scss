@@ -4,14 +4,18 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 1rem 0 1.5rem;
   background-color: $green;
   height: 25px;
- 
-&__content {
-  color: white;
-  font-weight: bold;
-}
-  
-  
+
+  &__content {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+
 }
