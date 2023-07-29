@@ -70,7 +70,7 @@ const DatePicker = ({
     // calendarDate.current.contains(e.target)va si l'élément qu on  a cliqué (e.target)
     // est à l'intérieur  du calendrier (calendarDate.current). 
       }
-      console.log(handleClickOutside);
+    
     };
     // j'ajoute un ecouteur d'evenment en utilisant mousedown pour le clic souris
     document.addEventListener("mousedown", handleClickOutside);

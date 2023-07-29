@@ -4,18 +4,10 @@ import { states } from "data/states.js";
 import departments from "data/departments";
 import { Modal }  from "banby-modal-customize-react";
 import { useDispatch } from 'react-redux';
+import { addEmployee } from "redux/actions.js";
 
 
-/**
- * Formulaire pour ajouter un nouvel employé.
- *
- * @param {Object} props - Les propriétés passées au composant.
- * @param {Function} props.handleNewEmployee -utilisé comme callback pour gerer l'ajout d'un new employed lorsque form soumis
- * @param {Function} props.setIsVisible -Utilisé comme callback pour définir la visibilité du formulaire
- * @returns {JSX.Element} Composant de formulaire.
- */
-
-const Form = ({ handleNewEmployee, setIsVisible }) => {
+const Form = ({ handleNewEmployee }) => {
   const dispatch = useDispatch();
   const initialState = {
     firstName: "",
@@ -29,10 +21,6 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     department: "",
   };
 
-  /**
-   * @initialise l état dans le composant form
-   * @function renvoi un [2 elements, la valeur actuelle = formData ( donnees du form) et setFormData pour la màj]
-   */
   const [formData, setFormData] = useState(initialState);
 
   const resetForm = () => {setFormData(initialState);
@@ -42,7 +30,7 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
   const [employeeCreated, setEmployeeCreated] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const modalTitle =  `Congratulations ! Completed form`
+  
 
   const handleOpenModal = () => {
     console.log("handleOpenModal called with formData:", formData);
@@ -53,14 +41,10 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     setModalOpen(false);
   };
 
-  /**
-   * Gère les modifications de date pour les composants DatePicker.
-   *
-   * @param {string} name - Nom du champ de saisie de date.
-   * @param {string} value - Valeur de la date sélectionnée.
-   */
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(handleChange);
     setFirstName(formData.firstName);
     setLastName(formData.lastName);
     setFormData((prevFormData) => ({
@@ -69,46 +53,43 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
     }));
   };
 
-  /**
-   * Gère les modifications de date pour les composants DatePicker".
-   *
-   * @param {string} name - Nom du champ de saisie de date.
-   * @param {string} value - Valeur de la date sélectionnée.
-   */
+
   const handleDateChange = (name, value) => {
     console.log("handleDateChange called with", name, value);
-    //console.log("formData.dateOfBirth:", formData.dateOfBirth);
-    //console.log("formData.startDate:", formData.startDate);
-
-    // Met à jour le formulaire avec la new value de @date sélectionnée
+ 
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
   const handleSave = () => {
-    // code pour gérer l'action du bouton "Enregistrer"
-    handleCloseModal();
-  };
-
-  const handleCancel = () => {
-    // code pour annuler les modifications du formulaire
-    console.log("Modifications du formulaire annulées");
-    handleCloseModal();
-  };
-  /**
-   * Gère la soumission du formulaire pour ajouter un nouvel employé.
-   *
-   * @param {React.FormEvent<HTMLFormElement>} e - Événement de soumission du formulaire.
-   */
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleNewEmployee(formData);
-    setIsVisible(true);
-    resetForm();
-    handleOpenModal();
-    setEmployeeCreated(true);
-    dispatch({ type: 'SET_EMPLOYEE', employee: formData });
+    // Code pour gérer l'action du bouton "REGISTER"
+    dispatch(addEmployee(formData)); // Ajout de l'employé
+    resetForm(); // Réinitialisation des valeurs du formulaire
+    handleCloseModal(); // Ferme la modal
   };
   
+ 
+  const handleCancel = () => {
+    // Annule l'enregistrement des données du formulaire
+    handleFormCancel();
+  };
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //handleNewEmployee(formData);
+     //resetForm();
+    handleOpenModal();
+    setEmployeeCreated(true);
+    //dispatch(addEmployee(formData));
+    
+  };
+  
+  // Fonction pour réinitialiser les valeurs du formulaire
+  const handleFormCancel = () => {
+    setFormData(initialState); // Réinitialise les valeurs du formulaire à leur état initial
+    setEmployeeCreated(false); // Réinitialise l'état indiquant si l'employé a été créé
+    handleCloseModal(); // Ferme la modal
+  };
   return (
     <>
       <section className="form">
@@ -241,14 +222,13 @@ const Form = ({ handleNewEmployee, setIsVisible }) => {
           </select>
 
           <br />
-          <button className="form__save">Save</button>
+          <button className="form__save">Soumettre</button>
         </form>
 
         <Modal
           isOpen={modalOpen}
           onClose={handleCloseModal}
           modalClassName="my-custom-modal-class"
-          modalTitle={modalTitle}
           firstName={firstName}
           lastName={lastName}
           onCancel={handleCancel}
