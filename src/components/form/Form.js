@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import DatePicker from "components/calendar/DatePicker";
 import { states } from "data/states.js";
 import departments from "data/departments";
-import { Modal }  from "banby-modal-customize-react";
-import { useDispatch } from 'react-redux';
+import { Modal } from "banby-modal-customize-react";
+import { useDispatch } from "react-redux";
 import { addEmployee } from "redux/actions.js";
+import SecondModal from "components/modal/SecondModal.js";
 
-
-const Form = ({ handleNewEmployee }) => {
+const Form = () => {
   const dispatch = useDispatch();
   const initialState = {
     firstName: "",
@@ -22,15 +22,16 @@ const Form = ({ handleNewEmployee }) => {
   };
 
   const [formData, setFormData] = useState(initialState);
-
-  const resetForm = () => {setFormData(initialState);
+  const resetForm = () => {
+    setFormData(initialState);
   };
 
   const [modalOpen, setModalOpen] = useState(false);
   const [employeeCreated, setEmployeeCreated] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  
+  //const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+ 
 
   const handleOpenModal = () => {
     console.log("handleOpenModal called with formData:", formData);
@@ -40,7 +41,6 @@ const Form = ({ handleNewEmployee }) => {
     console.log("handleCloseModal called with formData:", formData);
     setModalOpen(false);
   };
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,43 +53,42 @@ const Form = ({ handleNewEmployee }) => {
     }));
   };
 
-
   const handleDateChange = (name, value) => {
     console.log("handleDateChange called with", name, value);
- 
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
   const handleSave = () => {
-    // Code pour gérer l'action du bouton "REGISTER"
-    dispatch(addEmployee(formData)); // Ajout de l'employé
-    resetForm(); // Réinitialisation des valeurs du formulaire
-    handleCloseModal(); // Ferme la modal
+    dispatch(addEmployee(formData));
+    resetForm();
+    handleCloseModal(); 
+    handleOpenSecondModal()
   };
-  
- 
+
   const handleCancel = () => {
-    // Annule l'enregistrement des données du formulaire
     handleFormCancel();
   };
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
-    //handleNewEmployee(formData);
-     //resetForm();
     handleOpenModal();
     setEmployeeCreated(true);
-    //dispatch(addEmployee(formData));
-    
   };
-  
-  // Fonction pour réinitialiser les valeurs du formulaire
+
   const handleFormCancel = () => {
-    setFormData(initialState); // Réinitialise les valeurs du formulaire à leur état initial
-    setEmployeeCreated(false); // Réinitialise l'état indiquant si l'employé a été créé
-    handleCloseModal(); // Ferme la modal
+    setFormData(initialState); 
+    setEmployeeCreated(false);
+    handleCloseModal(); 
   };
+
+  const [secondModalOpen, setSecondModalOpen] = useState(false);
+  const handleOpenSecondModal = () => 
+  setSecondModalOpen(true);  
+
+  const handleCloseSecondModal = () => 
+  setSecondModalOpen(false);
+  
+
   return (
     <>
       <section className="form">
@@ -223,6 +222,10 @@ const Form = ({ handleNewEmployee }) => {
 
           <br />
           <button className="form__save">Soumettre</button>
+          {secondModalOpen && <SecondModal handleCloseSecondModal={handleCloseSecondModal} />}
+  {/* {showSuccessMessage && (
+    <div className="success-message">Employé enregistré avec succès !</div>
+  )} */}
         </form>
 
         <Modal
@@ -235,6 +238,7 @@ const Form = ({ handleNewEmployee }) => {
           onSave={handleSave}
           employeeCreated={employeeCreated}
         />
+  
       </section>
     </>
   );

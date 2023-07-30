@@ -103,3 +103,10 @@ select option {
 select#state option {
   width: 100px;
 }
+.success-message {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
