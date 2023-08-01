@@ -7,37 +7,13 @@
   width: 100%;
 }
 
-.sc-ivKppU.gSejHU {
-  display: none;
+.jifbFL {
+  width: 400px;
 }
 
-/*** input search ***/
-.sc-eDvSVe.jifbFL {
-  width: 20rem;
-
-  @include min-max($smartphone, $smartLarge - 1) {
-    width: 18rem;
-  }
-}
-
-/*** ajout style ***/
 .search {
-  width: 93%;
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  align-items: center;
-
-  @include min-max($smartphone, $desktop - 1) {}
-
-  &__error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: red;
-    font-weight: 700;
-  }
 }
 
 .search label {

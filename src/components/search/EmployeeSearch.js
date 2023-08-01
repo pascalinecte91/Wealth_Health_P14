@@ -13,10 +13,10 @@ const EmployeeSearch = ({ onSearch }) => {
 
   return (
     <div className="search">
-      <label htmlFor="search__text">Recherchez un "employé" avec son nom</label>
+      <label htmlFor="search__text">Recherchez un "employé"</label>
       <SearchBox
         id="search__input"
-        placeholder="Entrez les premières lettres du nom..."
+        placeholder="Entrez les 1ères lettres du nom..."
         value={searchValue}
         onChange={handleSearch}
       />

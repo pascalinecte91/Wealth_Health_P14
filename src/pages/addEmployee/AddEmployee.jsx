@@ -3,18 +3,18 @@ import Form from "components/form/Form.js";
 import logo from "assets/logo_sans_fond.png";
 import mockEmployed from "data/mockEmployed.js";
 
-
+/**
+ * @Composant AddEmployee Ajouter un nouvel employé à la liste.
+ * @returns {JSX.Element} 
+ */
 const AddEmployee = () => {
-
   const [employed, setEmployed] = useState(mockEmployed);
 
   React.useEffect(() => {
-    console.log("all employees list:", employed);
+    console.log("employees list:", employed);
   }, [employed]);
 
-
   const handleNewEmployee = (employeeData) => {
-    console.log("handleNewEmployee called with", employeeData);
     setEmployed([...employed, employeeData]);
   };
 

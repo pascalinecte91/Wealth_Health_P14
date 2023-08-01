@@ -1,6 +1,15 @@
 import React from 'react';
+// extern component
 import ReactPaginate from 'react-paginate';
 
+/**
+ * @Composant de pagination.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.pageCount - Le nombre total de pages.
+ * @param {number} props.currentPage - La page actuelle.
+ * @param {function} props.onPageChange - La fonction de gestion du changement de page.
+ * @returns {JSX.Element} 
+ */
 
 const Pagination = ({ pageCount, currentPage, onPageChange }) => {
   const isFirstPage = currentPage === 0;

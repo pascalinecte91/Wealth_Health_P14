@@ -11,6 +11,7 @@ export const customStyles = {
     style: {
       width: "80%",// largeur de la table
       margin: "auto", //marge pour centrer
+      marginBottom: "80px", // marge en bas
     },
   },
 
@@ -23,7 +24,7 @@ export const customStyles = {
      backgroundColor: "#6f8f6f", //fond en-tete
       fontSize: "18px", //taille texte entete
       color: "white", // Couleur du texte de la ligne d'en-tête
-      fontStyle: "italic", // style police
+      fontStyle: "normal", // style police
     },
   },
 };

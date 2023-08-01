@@ -7,6 +7,10 @@ import { useDispatch } from "react-redux";
 import { addEmployee } from "redux/actions.js";
 import SecondModal from "components/modal/SecondModal.js";
 
+/**
+ * @Composant Form formulaire pour ajouter un employé.
+ * @returns {JSX.Element} 
+ */
 const Form = () => {
   const dispatch = useDispatch();
   const initialState = {
@@ -20,19 +24,18 @@ const Form = () => {
     zipCode: "",
     department: "",
   };
-
+// État du formulaire contenant les données saisies
   const [formData, setFormData] = useState(initialState);
   const resetForm = () => {
     setFormData(initialState);
   };
-
+  //gérer la modale
   const [modalOpen, setModalOpen] = useState(false);
   const [employeeCreated, setEmployeeCreated] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  //const [showSuccessMessage, setShowSuccessMessage] = useState(false);
- 
 
+  //fonction pour gerer la 1ere modale
   const handleOpenModal = () => {
     console.log("handleOpenModal called with formData:", formData);
     setModalOpen(true);
@@ -42,6 +45,7 @@ const Form = () => {
     setModalOpen(false);
   };
 
+// gere les champs du form
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(handleChange);
@@ -57,18 +61,19 @@ const Form = () => {
     console.log("handleDateChange called with", name, value);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
-
+//pour sauvegarder, fermer et appel de la seconde modal
   const handleSave = () => {
     dispatch(addEmployee(formData));
     resetForm();
     handleCloseModal(); 
     handleOpenSecondModal()
   };
-
+// pour annulation du form
   const handleCancel = () => {
     handleFormCancel();
   };
 
+  // pour soumettre le form
   const handleSubmit = (e) => {
     e.preventDefault();
     handleOpenModal();
@@ -81,6 +86,7 @@ const Form = () => {
     handleCloseModal(); 
   };
 
+  // gestion de la seconde modal
   const [secondModalOpen, setSecondModalOpen] = useState(false);
   const handleOpenSecondModal = () => 
   setSecondModalOpen(true);  
@@ -223,9 +229,7 @@ const Form = () => {
           <br />
           <button className="form__save">Soumettre</button>
           {secondModalOpen && <SecondModal handleCloseSecondModal={handleCloseSecondModal} />}
-  {/* {showSuccessMessage && (
-    <div className="success-message">Employé enregistré avec succès !</div>
-  )} */}
+
         </form>
 
         <Modal
