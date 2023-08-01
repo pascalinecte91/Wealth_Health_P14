@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.892d54e6.css",
-    "main.js": "/static/js/main.c38341a8.js",
-    "static/media/logo_sans_fond.png": "/static/media/logo_sans_fond.c3ff3c52b17173c4d79f.png",
-    "static/media/logo_name.gif": "/static/media/logo_name.6a4dff867912e6196300.gif",
-    "static/media/picture_home.jpg": "/static/media/picture_home.8ae8976cbf8477121805.jpg",
-    "index.html": "/index.html",
-    "main.892d54e6.css.map": "/static/css/main.892d54e6.css.map",
-    "main.c38341a8.js.map": "/static/js/main.c38341a8.js.map"
+    "main.css": "/Wealth_Health_P14/static/css/main.b1bbc909.css",
+    "main.js": "/Wealth_Health_P14/static/js/main.29a731b3.js",
+    "static/media/picture_home.png": "/Wealth_Health_P14/static/media/picture_home.d89af8b120de33989384.png",
+    "static/media/groupe.png": "/Wealth_Health_P14/static/media/groupe.e9af9fa5b716e986838b.png",
+    "static/media/logo_name.png": "/Wealth_Health_P14/static/media/logo_name.068e046af20ce817b226.png",
+    "static/media/logo_sans_fond.png": "/Wealth_Health_P14/static/media/logo_sans_fond.c3ff3c52b17173c4d79f.png",
+    "index.html": "/Wealth_Health_P14/index.html",
+    "main.b1bbc909.css.map": "/Wealth_Health_P14/static/css/main.b1bbc909.css.map",
+    "main.29a731b3.js.map": "/Wealth_Health_P14/static/js/main.29a731b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.892d54e6.css",
-    "static/js/main.c38341a8.js"
+    "static/css/main.b1bbc909.css",
+    "static/js/main.29a731b3.js"
   ]
 }
