@@ -47,7 +47,7 @@
     flex-direction: column;
     align-items: center;
     @include min-max ($smartphone, $smartLarge - 1 ) {
-      margin-top: 50px;
+      margin-top: 3.125rem;
     }
    
   }
@@ -58,11 +58,11 @@
     text-align: center;
 
     @include min-max($smartphone, $smartLarge - 1) {
-      font-size: 19px;
+      font-size: 1.188rem;
       display: none;
     }
     @include min-max($smartLarge, $desktop - 1) {
-      font-size: 18px;
+      font-size: 1.125rem;
      
     }
   }
@@ -77,21 +77,24 @@
     justify-content: center;
     gap: 10px;
   }
-  h4 {
+  &__empl {
     font-size: 23px;
     text-align: center;
+    @include min-max($smartphone, $tablet - 1) {
+      font-size: 14px;
+    }
   }
   
   h1 {
-    font-size: 45px;
+    font-size: 2.813rem;
     @include min-max($smartLarge, $desktop - 1) {
-      font-size: 22px;
+      font-size: 1.375rem;
     }
     @include min-max($desktop, $big-desktop - 1) {
-      font-size: 30px;
+      font-size: 1.875rem;
     }
     @include min-max($smartphone, $smartLarge - 1) {
-      font-size: 15px;
+      font-size: 0.938rem;
     }
   }
 
@@ -100,10 +103,10 @@
   display: flex;
   flex-direction: row;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   gap: 8px;
 
   &__add {
@@ -126,10 +129,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
+    height: 2.5rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     @include min-max($smartphone, $smartLarge - 1 ) {
-      height: 30px;
+      height: 1.875rem;
     }
   }
 }
@@ -151,11 +154,11 @@
 }
 
 .homePage__group {
-  height: 80px;
-  margin-top: 20px;
+  height: 5rem;
+  margin-top: 1.25rem;
 
   @include min-max($smartphone, $desktop - 1) {
-    height: 60px;
+    height: 3.75rem;
     
   }
 }

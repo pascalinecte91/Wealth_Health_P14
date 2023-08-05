@@ -1,5 +1,5 @@
 {
-  "home page": "https://pascalinecte91.github.io/Wealth_Health_P14/",
+  "homepage": "https://pascalinecte91.github.io/Wealth_Health_P14",
   "name": "wealth_health",
   "version": "0.1.0",
   "private": true,
@@ -34,7 +34,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "docs": "jsdoc src -d docs"
   },
@@ -59,9 +58,8 @@
   "devDependencies": {
     "@babel/cli": "^7.22.9",
     "@babel/core": "^7.22.9",
-    "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-preset-react-app": "^10.0.1",
-    "faker": "^6.6.6",
     "gh-pages": "^5.0.0",
     "jsdoc": "^4.0.2"
   }

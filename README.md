@@ -81,8 +81,6 @@ The company uses an internal web application called HRnet, which manages employe
 - Local:  http://localhost:3000 
 - npm run docs
 
-- githubPages = in progress
 
-IN PROGRESS
 
 

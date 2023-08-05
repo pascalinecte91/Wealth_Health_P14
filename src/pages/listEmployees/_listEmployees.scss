@@ -22,7 +22,6 @@
 
   &__logo {
     width: 200px;
-
     @include min-max($smartphone, $smartLarge - 1) {
       width: 100px;
     }
@@ -33,31 +32,8 @@
   }
 }
 
-table {
-  border-collapse: collapse;
-  width: 80%;
-  margin: auto;
-}
 
-th,
-td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-th {
-  background-color: $greenButton;
-  color: white;
-}
-
-.uppercase {
-  text-transform: capitalize;
-}
-.delete {
+button.delete {
   border: none;
   color: white;
   background-color: green;
@@ -66,8 +42,14 @@ th {
   height:40px;
   border-radius: 50%;
   top:5%;
+  @include min-max($smartphone, $smartLarge -1 ){
+    display:none ;
+}
 }
 .lot {
   display: flex;
   align-items: center;
+  @include min-max($desktop, $big-desktop -1) {
+    padding: 8px 6px;
+  }
 }

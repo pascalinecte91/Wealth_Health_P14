@@ -27,8 +27,8 @@
   }
 }
 
-.sc-bdDrbm.eBwetW.rdt_Table {
-  width: 90%;
+.sc-fKVrsT.dJLoil {
+  display: block;
 }
 
 .jTIGcE {
@@ -40,7 +40,6 @@
 
 .rdt_TableCol[data-column-id="8"],
 .rdt_TableCol[data-column-id="9"],
-.rdt_TableCol[data-column-id="4"],
 .rdt_TableCol[data-column-id="7"],
 .rdt_TableCol[data-column-id="5"],
 .rdt_TableCol[data-column-id="6"] {
@@ -51,7 +50,6 @@
 
 .rdt_TableCol[data-column-id="8"],
 .rdt_TableCol[data-column-id="9"],
-.rdt_TableCol[data-column-id="4"],
 .rdt_TableCol[data-column-id="7"],
 .rdt_TableCol[data-column-id="5"],
 .rdt_TableCol[data-column-id="6"] {
@@ -63,7 +61,6 @@
 .rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="6"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="4"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"] {
   @include min-max($smartphone, $smartLarge - 1) {
@@ -74,7 +71,6 @@
 .rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="6"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="4"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"] {
   @include min-max($smartLarge, $tablet - 1) {
@@ -100,12 +96,17 @@
 
 .rdt_TableCol[data-column-id="8"],
 .rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"] {
-  width: 50px;
+  width: 3.125rem;
+}
+.rdt_TableCell[data-column-id="8"]{
+  @include min-max($smartLarge, $big-desktop){
+    min-width: 60px;
+  }
+
 }
 
-.jvZQt {
-  width:60%;
-
+.rdt_Table {
+  table-layout: auto;
 }
 .cFiKPt {
   align-items: normal;
@@ -113,4 +114,14 @@
 
 .dJLoil {
   display: inherit;
+}
+
+div[data-column-id] .sc-egifa {
+  white-space: initial !important;
+  text-overflow: initial !important;
+
+  @include min-max($smartLarge, $desktop -1 ){
+    font-size: 12px;
+  } 
+
 }

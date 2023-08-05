@@ -9,15 +9,20 @@
 
 .jifbFL {
   width: 400px;
+  @include min-max($tablet, $desktop - 1) {
+    width: fit-content;
+  }
 }
 
 .search {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+
+
 }
 
 .search label {
-  font-size: 15px;
+  font-size: 0.938rem;
   color: green;
   display: flex;
   align-items: center;
@@ -25,8 +30,9 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  @include min-max($smartphone, $smartLarge - 1) {
-    justify-content: inherit;
+  
+  @include min-max($tablet, $desktop -1){
+    font-size: 52px;
     text-align: center;
   }
 }

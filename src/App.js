@@ -27,8 +27,6 @@ const App = () => {
         </Router>
         </StyleSheetManager>
       </>
-  
   );
 };
-
 export default App;

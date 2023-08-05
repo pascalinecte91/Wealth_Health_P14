@@ -23,7 +23,7 @@ const AddEmployee = () => {
       <section className="create">
         <div className="create__wrapperForm">
           <h1 className="create__name">HRNet</h1>
-          <img className="create__logo" src={logo} alt="" />
+          <img className="create__logo" src={logo} alt="logo Hr-net" width={150} height={88} />
           <h2 className="create__title">Create Employee</h2>
         </div>
         <Form handleNewEmployee={handleNewEmployee}

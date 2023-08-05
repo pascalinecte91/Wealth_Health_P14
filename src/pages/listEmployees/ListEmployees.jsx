@@ -83,7 +83,7 @@ const ListEmployees = () => {
       <section className="list">
         <div className="list__header">
           <h2 className="create__name">HRNet</h2>
-          <img className="list__logo" src={logo} alt="logo appli" />
+          <img className="list__logo" src={logo} alt="logo appli" width={200} height={170} />
           <div className="list__change">
             <h2 className="create__title">List Employee</h2>
             <button onClick={handleClearEmployees} className="delete">  <FaTrashAlt /></button>

@@ -3,6 +3,7 @@ import logo  from "assets/logo_name.png";
 import picture_home from "assets/picture_home.png"
 import Spinner from "components/spinner/Spinner.js";
 import groupe from "assets/groupe.png";
+import { NavLink } from "react-router-dom";
 /**
  * @Composant de la page d'accueil.
  * @returns {JSX.Element} Composant de la page d'accueil.
@@ -28,14 +29,14 @@ const Home = () => {
           <div className="homePage__content">
             <div className="homePage__infos">
             <h1 className="homePage__title">HRNet the app that manage </h1>
-              <span className="homePage__greenSpan"> <br />
-                <h4>Your employees</h4></span>  
+              <span className="homePage__greenSpan"> 
+                <p className="homePage__empl"> Your employees</p></span>  
                 <img className="homePage__group" src={groupe} alt="logo HRnet" /> 
             </div>
             <p className="homePage__subtitle">Join us in creating your employee list</p>
             <div className="button">
-              <a href="/add_employee" className="button__add">Create</a>
-              <a href="/list_employees" className="button__view">View</a>
+              <NavLink to="./add_employee" className="button__add">Create</NavLink>
+              <NavLink to="./list_employees" className="button__view">View</NavLink>
             </div>
           </div>
         

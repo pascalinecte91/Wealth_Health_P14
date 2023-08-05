@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 800px;
+  height: 50rem;
   
 
   &__card {
@@ -39,8 +39,8 @@
     display: flex;
     align-items: center;
     margin: 10px auto;
-    width: 100px;
-    height: 35px;
+    width: 6.25rem;
+    height: 2.188rem;
     border: none;
     border-radius: 5px;
   }
@@ -69,30 +69,30 @@ label {
 
 .input,
 .input_datepicker {
-  width: 450px;
+  width: 36rem;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
   box-sizing: border-box;
 
   @include min-max($smartphone, $smartLarge - 1) {
-    width: 350px;
+    width: 21.875rem;
   }
 }
 
 #create_employee {
   margin: 5px;
-  width: 450px;
+  width: 36rem;
   height: 100%;
 
   @include min-max($smartphone, $smartLarge - 1) {
-    width: 350px;
+    width: 21.875rem;
   }
 }
 
 aside {
   @include min-max($smartphone, $smartLarge - 1) {
-    width: 350px;
+    width: 21.875rem;
   }
 }
 
@@ -101,7 +101,7 @@ select option {
 }
 
 select#state option {
-  width: 100px;
+  width: 6.25rem;
 }
 .success-message {
   background-color: green;
@@ -109,4 +109,10 @@ select#state option {
   padding: 10px;
   text-align: center;
   font-weight: bold;
+}
+sc-eDvSVe .jifbFL {
+  @include min-max($desktop, $big-desktop -1){
+    width:270px;
+  }
+
 }

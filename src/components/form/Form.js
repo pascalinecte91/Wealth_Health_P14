@@ -71,6 +71,7 @@ const Form = () => {
 // pour annulation du form
   const handleCancel = () => {
     handleFormCancel();
+    console.log(handleCancel);
   };
 
   // pour soumettre le form
@@ -84,6 +85,7 @@ const Form = () => {
     setFormData(initialState); 
     setEmployeeCreated(false);
     handleCloseModal(); 
+    console.log(handleFormCancel);
   };
 
   // gestion de la seconde modal
