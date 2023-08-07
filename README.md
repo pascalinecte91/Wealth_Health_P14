@@ -10,6 +10,7 @@
 [![JSDoc](https://img.shields.io/badge/JSDoc-3.6.7-blue)](https://www.npmjs.com/package/jsdoc)
 [![React Calendar](https://img.shields.io/badge/React%20Calendar-3.4.0-blue)](https://www.npmjs.com/package/react-calendar)
 [![React Icons](https://img.shields.io/badge/React%20Icons-4.2.0-orange)](https://www.npmjs.com/package/react-icons)
+![Styled Components](https://img.shields.io/badge/-Styled%20Components-%23DB7093?logo=styled-components&logoColor=white)
 
 
 <div style="text-align: center; width: 100%">

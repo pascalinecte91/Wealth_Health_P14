@@ -11,9 +11,15 @@ import Navbar from 'components/navbar/Navbar.js';
 import isPropValid from '@emotion/is-prop-valid';
 import { StyleSheetManager } from 'styled-components';
 
+/**
+ * Composant principal de l'application.
+ * @returns {JSX.Element} 
+ */
 const App = () => {
   return (
       <>
+  {/* StyleSheetManager pour personnaliser le comportement des composants stylisés 
+  et éviter les avertissements dans la console */}
   <StyleSheetManager shouldForwardProp={isPropValid}>
         <Router>
         <Navbar />

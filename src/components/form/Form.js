@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DatePicker from "components/calendar/DatePicker";
+import DatePicker from "components/datePicker/DatePicker";
 import { states } from "data/states.js";
 import departments from "data/departments";
 import { Modal } from "banby-modal-customize-react";
@@ -13,6 +13,7 @@ import SecondModal from "components/modal/SecondModal.js";
  */
 const Form = () => {
   const dispatch = useDispatch();
+  
   const initialState = {
     firstName: "",
     lastName: "",

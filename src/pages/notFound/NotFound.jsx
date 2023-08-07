@@ -1,6 +1,10 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
+/**
+ * @Composant pour afficher une page d'erreur 404.
+ * @returns {JSX.Element} 
+ */
 const NotFound = () => {
   return (
     <>
