@@ -1,127 +1,42 @@
-.evciuT {
-  display: flex;
-  flex-wrap: wrap;
-  display: initial !important;
-}
 
-.dlwJhk {
-  display: flex;
-}
 
-.dUdLgu {
-  display: flex;
-  align-content: stretch;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
-  min-height: 48px;
-  flex-wrap: wrap;
-}
-
-.sc-gswNZR.dAZYal {
-  @include min-max($smartLarge, $tablet -1) {
-    font-size: 12px;
+.eRHmuV {
+  display: block !important;
   }
-}
 
-.sc-fKVrsT.dJLoil {
-  display: block;
-}
+  .bPokRt.rdt_TableRow{
+    @include min-max($smartphone, $smartLarge) {
+      font-size: 12px;
+    }
+  }
+ 
 
-.jTIGcE {
-  overflow: visible !important;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 15px;
-}
-
-.rdt_TableCol[data-column-id="8"],
-.rdt_TableCol[data-column-id="9"],
 .rdt_TableCol[data-column-id="7"],
-.rdt_TableCol[data-column-id="5"],
-.rdt_TableCol[data-column-id="6"] {
-  @include min-max($smartphone, $smartLarge - 1) {
-    display: none;
-  }
-}
-
 .rdt_TableCol[data-column-id="8"],
-.rdt_TableCol[data-column-id="9"],
-.rdt_TableCol[data-column-id="7"],
-.rdt_TableCol[data-column-id="5"],
-.rdt_TableCol[data-column-id="6"] {
-  @include min-max($smartLarge, $tablet - 1) {
+.rdt_TableCol[data-column-id="9"] {
+  @include min-max($smartLarge, $tablet ) {
     display: none;
   }
 }
 
-.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="6"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"],
+.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"] {
-  @include min-max($smartphone, $smartLarge - 1) {
+  @include min-max($smartLarge, $tablet ) {
     display: none;
   }
 }
 
-.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
 .rdt_TableCell[data-column-id="6"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"] {
-  @include min-max($smartLarge, $tablet - 1) {
+.rdt_TableCell[data-column-id="5"] [data-tag="allowRowEvents"]
+ {
+  @include min-max($smartphone, $smartLarge ) {
     display: none;
   }
 }
-
-.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="9"] [data-tag="allowRowEvents"],
-.rdt_TableCell[data-column-id="7"] [data-tag="allowRowEvents"] {
-  @include min-max($tablet, $desktop - 1) {
-    display: none;
-  }
+.rdt_TableBody{
+  @include tablet {
+  // Votre code pour les écrans de tablette ici
+  min-width: 900px;
 }
-
-.rdt_TableCol[data-column-id="8"],
-.rdt_TableCol[data-column-id="9"],
-.rdt_TableCol[data-column-id="7"] {
-  @include min-max($tablet, $desktop - 1) {
-    display: none;
-  }
-}
-
-.rdt_TableCol[data-column-id="8"],
-.rdt_TableCell[data-column-id="8"] [data-tag="allowRowEvents"] {
-  width: 3.125rem;
-}
-.rdt_TableCell[data-column-id="8"]{
-  @include min-max($smartLarge, $big-desktop){
-    min-width: 60px;
-  }
-
-}
-
-.rdt_Table {
-  table-layout: auto;
-}
-.cFiKPt {
-  align-items: normal;
-}
-
-.dJLoil {
-  display: inherit;
-}
-
-div[data-column-id] .sc-egifa {
-  white-space: initial !important;
-  text-overflow: initial !important;
-
-  @include min-max($smartLarge, $desktop -1 ){
-    font-size: 12px;
-  } 
-
 }

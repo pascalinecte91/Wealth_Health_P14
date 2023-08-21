@@ -5,20 +5,13 @@
   border: none;
   color: #000;
   width: 100%;
+  @include min-max($smartphone, $smartLarge){
+    padding:  10px 7px;
 }
-
-.jifbFL {
-  width: 400px;
-  @include min-max($tablet, $desktop - 1) {
-    width: fit-content;
-  }
 }
 
 .search {
   display: flex;
-  flex-wrap: nowrap;
-
-
 }
 
 .search label {
@@ -29,10 +22,14 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-
   
-  @include min-max($tablet, $desktop -1){
-    font-size: 52px;
+  @include min-max($tablet, $desktop ){
+    font-size: 15px;
     text-align: center;
   }
+  @include min-max($smartphone, $smartLarge){
+    font-size: 11px;
+  }
 }
+
+

@@ -1,55 +1,57 @@
 .list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: $greenLight 0px 1px 2px, $greenLight 0px 2px 4px,
+    $greenLight 0px 4px 8px, $greenLight 0px 8px 16px;
+  width: 80vw;
+  margin: auto;
+  height: 200px;
   margin-top: 20px;
 
-  &__header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    box-shadow: $greenLight 0px 1px 2px, $greenLight 0px 2px 4px,
-      $greenLight 0px 4px 8px, $greenLight 0px 8px 16px;
-    width: 80vw;
-    margin: auto;
-    height: 200px;
+  @include min-max($smartphone, $smartLarge) {
+    font-size: 15px;
+    flex-direction: column;
+    box-shadow: none;
 
-    @include min-max($smartphone, $smartLarge - 1) {
-      font-size: 15px;
-      flex-direction: column;
-      box-shadow: none;
-      height: 100px;
-    }
+  }
+
+
+  &__name,
+  &__title {
+    color: $green;
   }
 
   &__logo {
     width: 200px;
-    @include min-max($smartphone, $smartLarge - 1) {
+
+    @include min-max($smartphone, $smartLarge) {
       width: 100px;
     }
   }
+
   &__change {
     display: flex;
     align-items: center;
   }
-}
 
+  &__delete {
+    border: none;
+    color: white;
+    background-color: $greenLight;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 5%;
+    cursor: pointer;
 
-button.delete {
-  border: none;
-  color: white;
-  background-color: green;
-  margin-left: 10px;
-  width:40px;
-  height:40px;
-  border-radius: 50%;
-  top:5%;
-  @include min-max($smartphone, $smartLarge -1 ){
-    display:none ;
-}
-}
-.lot {
-  display: flex;
-  align-items: center;
-  @include min-max($desktop, $big-desktop -1) {
-    padding: 8px 6px;
+    @include min-max($smartphone, $smartLarge) {
+      display: none;
+    }
+  }
+  &__delete:hover {
+    background-color: $greenButton;
   }
 }

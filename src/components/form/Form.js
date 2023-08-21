@@ -5,15 +5,14 @@ import departments from "data/departments";
 import { Modal } from "banby-modal-customize-react";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "redux/actions.js";
-import SecondModal from "components/modal/SecondModal.js";
 
 /**
  * @Composant Form formulaire pour ajouter un employé.
- * @returns {JSX.Element} 
+ * @returns {JSX.Element}
  */
 const Form = () => {
   const dispatch = useDispatch();
-  
+
   const initialState = {
     firstName: "",
     lastName: "",
@@ -25,19 +24,22 @@ const Form = () => {
     zipCode: "",
     department: "",
   };
-// État du formulaire contenant les données saisies
+  // État du formulaire contenant les données saisies
   const [formData, setFormData] = useState(initialState);
   const resetForm = () => {
     setFormData(initialState);
   };
   //gérer la modale
   const [modalOpen, setModalOpen] = useState(false);
-  const [employeeCreated, setEmployeeCreated] = useState(false);
+  const [actionLabel, setActionLabel] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [secondModalOpen, setSecondModalOpen] = useState(false);
 
   //fonction pour gerer la 1ere modale
-  const handleOpenModal = () => {
+  const handleOpenModal = (title) => {
+    setModalTitle(title);
     console.log("handleOpenModal called with formData:", formData);
     setModalOpen(true);
   };
@@ -46,7 +48,7 @@ const Form = () => {
     setModalOpen(false);
   };
 
-// gere les champs du form
+  // gere les champs du form
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(handleChange);
@@ -62,14 +64,16 @@ const Form = () => {
     console.log("handleDateChange called with", name, value);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
-//pour sauvegarder, fermer et appel de la seconde modal
+  //pour sauvegarder, fermer et appel de la seconde modal
   const handleSave = () => {
     dispatch(addEmployee(formData));
     resetForm();
-    handleCloseModal(); 
-    handleOpenSecondModal()
+    handleCloseModal();
+
+    setModalTitle("Employé enregistré");
+    setSecondModalOpen(true);
   };
-// pour annulation du form
+  // pour annulation du form
   const handleCancel = () => {
     handleFormCancel();
     console.log(handleCancel);
@@ -79,24 +83,16 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleOpenModal();
-    setEmployeeCreated(true);
+    setActionLabel(true);
+    console.log(setActionLabel);
   };
 
   const handleFormCancel = () => {
-    setFormData(initialState); 
-    setEmployeeCreated(false);
-    handleCloseModal(); 
+    setFormData(initialState);
+    setActionLabel(false);
+    handleCloseModal();
     console.log(handleFormCancel);
   };
-
-  // gestion de la seconde modal
-  const [secondModalOpen, setSecondModalOpen] = useState(false);
-  const handleOpenSecondModal = () => 
-  setSecondModalOpen(true);  
-
-  const handleCloseSecondModal = () => 
-  setSecondModalOpen(false);
-  
 
   return (
     <>
@@ -117,7 +113,7 @@ const Form = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="last-name">Last Name</label>
+              <label htmlFor="last_name">Last Name</label>
               <input
                 required
                 type="text"
@@ -130,7 +126,7 @@ const Form = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="Date of Birth">Date of Birth</label>
+              <label htmlFor="Date_of_Birth">Date of Birth</label>
               <DatePicker
                 id={"date_of_birth"}
                 name={"dateOfBirth"}
@@ -230,9 +226,9 @@ const Form = () => {
           </select>
 
           <br />
-          <button className="form__save">Soumettre</button>
-          {secondModalOpen && <SecondModal handleCloseSecondModal={handleCloseSecondModal} />}
-
+          <button className="form__save" onClick={() => handleOpenModal}>
+            Soumettre
+          </button>
         </form>
 
         <Modal
@@ -243,9 +239,18 @@ const Form = () => {
           lastName={lastName}
           onCancel={handleCancel}
           onSave={handleSave}
-          employeeCreated={employeeCreated}
+          showButtons={true}
+          actionLabel={actionLabel}
         />
-  
+
+        <Modal
+          isOpen={secondModalOpen}
+          onClose={() => setSecondModalOpen(false)}
+          modalClassName="my-custom-modal-class"
+          modalTitle={modalTitle}
+        >
+          <h2>{modalTitle}</h2>
+        </Modal>
       </section>
     </>
   );

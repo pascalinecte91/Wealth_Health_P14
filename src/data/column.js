@@ -85,3 +85,5 @@ export const columns = [
     sortFunction: (a, b) => a.zipCode.localeCompare(b.zipCode),
   },
 ];
+  
+

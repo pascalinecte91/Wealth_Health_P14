@@ -11,7 +11,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "banby-modal-customize-react": "^0.1.18",
+    "banby-modal-customize-react": "^0.1.21",
     "react": "^18.2.0",
     "react-calendar": "^4.3.0",
     "react-data-table-component": "^7.5.3",
@@ -61,6 +61,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-preset-react-app": "^10.0.1",
     "gh-pages": "^5.0.0",
+    "http-server": "^14.1.1",
     "jsdoc": "^4.0.2"
   }
 }

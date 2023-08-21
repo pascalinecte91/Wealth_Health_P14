@@ -78,20 +78,24 @@ const ListEmployees = () => {
   const handleClearEmployees = () => {
     dispatch(clearEmployees());
   };
+
+  // Gérez la mise en page responsive de la DataTable ici
+  const responsiveColumns = columns.map((col) => ({
+    ...col,
+    minWidth: "80px"
+  }));
   return (
     <>
       <section className="list">
-        <div className="list__header">
-          <h2 className="create__name">HRNet</h2>
+          <h2 className="list__name">HRNet</h2>
           <img className="list__logo" src={logo} alt="logo appli" width={200} height={170} />
           <div className="list__change">
-            <h2 className="create__title">List Employee</h2>
-            <button onClick={handleClearEmployees} className="delete">  <FaTrashAlt /></button>
+            <h2 className="list__title">List Employee</h2>
+            <button onClick={handleClearEmployees} className="list__delete">  <FaTrashAlt /></button>
           </div>
-        </div>
       </section>
 
-      <div className="pagination-search">
+      <section className="pagination-search">
         <div className="pagination-search__toggle">
           <span>Nbre par page : </span>
           <select className="page" value={itemsPerPage} onChange={handleItemsPerPageChange}>
@@ -101,26 +105,24 @@ const ListEmployees = () => {
             <option value="100">100</option>
           </select>
         </div>
-        <div className="lot">
+        <div className="pagination-search__lot">
           <Pagination
             pageCount={Math.ceil(allEmployeesCapitalized.length / itemsPerPage)}
             currentPage={currentPage}
-            onPageChange={setCurrentPage}
-          />
-       
-      
-          <EmployeeSearch onSearch={handleSearch} />
-        
-            {Math.min(allEmployeesCapitalized.length, endIndex)}  / {allEmployeesCapitalized.length} salariés
+            onPageChange={setCurrentPage}/>
           
-         
+          <EmployeeSearch onSearch={handleSearch} />
+          <div className="pagination-search__number">
+            {Math.min(allEmployeesCapitalized.length, endIndex)}  / {allEmployeesCapitalized.length} salariés
+            </div>
         </div>
-      </div>
+      </section>
 
       <DataTable
-        columns={columns}
+        columns={responsiveColumns}
         data={displayedCurrentItems}
         customStyles={customStyles}
+        className="responsive_dateTable custom_dateTable"
       />
     </>
   );

@@ -28,9 +28,15 @@ $SuperBig : 1660px;
     @content;
   }
 }
+@mixin tablet{
+  @media only screen and (max-width: $tablet) {
+    @content;
+  }
+}
 // colors
 
 $green: #458846 ;
 $greenButton: #6f8f6f;
 $greenLight: rgb(221, 228, 221);
+
 

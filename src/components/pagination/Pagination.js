@@ -13,7 +13,7 @@ import ReactPaginate from 'react-paginate';
 
 const Pagination = ({ pageCount, currentPage, onPageChange }) => {
   const isFirstPage = currentPage === 0;
-  const isLastPage = currentPage === pageCount - 1;
+  const isLastPage = currentPage === pageCount  ;
 
   const previousLabel = isFirstPage ? <span>{'<'}</span> : '<';
   const nextLabel = isLastPage ? <span>{'>'}</span> : '>';

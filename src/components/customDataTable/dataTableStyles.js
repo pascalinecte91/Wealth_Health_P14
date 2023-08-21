@@ -22,11 +22,14 @@ export const customStyles = {
   headRow: {
     style: {
      backgroundColor: "#6f8f6f", //fond en-tete
-      fontSize: "18px", //taille texte entete
+      fontSize: "16px", //taille texte entete
       color: "white", // Couleur du texte de la ligne d'en-tête
       fontStyle: "normal", // style police
     },
+    
   },
+  
+
 };
 
 

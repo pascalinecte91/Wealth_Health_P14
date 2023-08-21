@@ -5,7 +5,9 @@
   flex-direction: column;
   justify-content: center;
   height: 50rem;
-  
+  @include min-max($smartphone, $smartLarge ) {
+  height: 0;
+  }
 
   &__card {
     background-color: $greenLight;
@@ -43,10 +45,12 @@
     height: 2.188rem;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
   }
   &__save:hover {
     background: linear-gradient(to right, #a4b7a7, #51865a);
     background-color: #a4b7a7;
+    
   }
 
   &__save:active {
@@ -75,7 +79,7 @@ label {
   border-radius: 3px;
   box-sizing: border-box;
 
-  @include min-max($smartphone, $smartLarge - 1) {
+  @include min-max($smartphone, $smartLarge) {
     width: 21.875rem;
   }
 }
@@ -83,15 +87,16 @@ label {
 #create_employee {
   margin: 5px;
   width: 36rem;
-  height: 100%;
+  height: 80%;
 
-  @include min-max($smartphone, $smartLarge - 1) {
+  @include min-max($smartphone, $smartLarge) {
     width: 21.875rem;
+   
   }
 }
 
 aside {
-  @include min-max($smartphone, $smartLarge - 1) {
+  @include min-max($smartphone, $smartLarge) {
     width: 21.875rem;
   }
 }
@@ -111,7 +116,7 @@ select#state option {
   font-weight: bold;
 }
 sc-eDvSVe .jifbFL {
-  @include min-max($desktop, $big-desktop -1){
+  @include min-max($desktop, $big-desktop){
     width:270px;
   }
 

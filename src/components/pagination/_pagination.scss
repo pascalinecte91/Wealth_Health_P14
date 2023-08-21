@@ -40,8 +40,31 @@
     flex-wrap: nowrap;
     width: 100%;
   }
-
+  &__toggle {
+    display: flex;
+    @include min-max($smartphone, $tablet) {
+    font-size: 15px;
+    display: none;
+  }
 }
+  &__lot {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    @include min-max($desktop, $big-desktop) {
+      padding: 8px 6px;
+    }
+    @include min-max($smartphone, $smartLarge) {
+      font-size: 11px;
+    }
+}
+
+&__number {
+  @include min-max($smartphone, $smartLarge) {
+    display: none;
+}
+}
+  }
 
   .page {
     padding-left: 5px;
