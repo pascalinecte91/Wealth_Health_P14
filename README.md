@@ -6,11 +6,14 @@
 ![npm](https://img.shields.io/badge/-npm-%23CB3837?logo=npm&logoColor=white)
 ![Redux](https://img.shields.io/badge/-Redux-%23764ABC?logo=redux&logoColor=white)
 ![Node.js](https://img.shields.io/badge/-Node.js-%23339933?logo=node.js&logoColor=white)
-[![React Data Table Component](https://img.shields.io/badge/React%20Data%20Table%20Component-6.15.1-blue)](https://www.npmjs.com/package/react-data-table-component)
+![React Data Table Component](https://img.shields.io/npm/v/react-data-table-component)
+![React-paginate](https://img.shields.io/npm/v/react-paginate)
 [![JSDoc](https://img.shields.io/badge/JSDoc-3.6.7-blue)](https://www.npmjs.com/package/jsdoc)
 [![React Calendar](https://img.shields.io/badge/React%20Calendar-3.4.0-blue)](https://www.npmjs.com/package/react-calendar)
 [![React Icons](https://img.shields.io/badge/React%20Icons-4.2.0-orange)](https://www.npmjs.com/package/react-icons)
 ![Styled Components](https://img.shields.io/badge/-Styled%20Components-%23DB7093?logo=styled-components&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-%23007ACC?logo=visual-studio-code&logoColor=white)
+
 
 
 <div style="text-align: center; width: 100%">
@@ -23,15 +26,26 @@
 
 ## Prerequites : 
 
-- node js version : v12.22.12
-- npm version :  6.14.16
+- visual studio code (build)
+- nodejs version : 18.16.1
+- npm version :  9.5.0
 - react: version 18.2.0
+- redux: version 4.2.1
+- redux toolkit : version 1.9.5
 - react-dom: version 18.2.0
-- repository clone before conversion [Link](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
-- ![Built with Visual Studio Code](https://img.shields.io/badge/Built%20with-Visual%20Studio%20Code-blue)
-- "react-search-box": "^3.0.0"
----
+- sass: version 1.63.6
+- repository clone before conversion [Link project](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
 
+
+
+### external plugin
+- react data table component
+- react search-box
+- react calendar
+- react paginate
+- react datepicker
+- banby modal customize react
+---
 You work for the technology department of a large financial company, WealthHealth. 
 
 The company uses an internal web application called HRnet, which manages employee files. The application is old and uses jQuery on the front end, which leads to considerable bugs and an increase in internal complaints. Your development team has been working on upgrading the application for some time now.
@@ -81,6 +95,7 @@ The company uses an internal web application called HRnet, which manages employe
 - npm start
 - Local:  http://localhost:3000 
 - npm run docs
+- npm run deploy ( github page)
 
 
 

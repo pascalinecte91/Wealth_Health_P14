@@ -77,6 +77,7 @@ const ListEmployees = () => {
   // Gère la suppression de tous les employés.
   const handleClearEmployees = () => {
     dispatch(clearEmployees());
+    console.log(clearEmployees);
   };
 
   // Gérez la mise en page responsive de la DataTable ici

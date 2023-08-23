@@ -40,18 +40,15 @@ const Form = () => {
   //fonction pour gerer la 1ere modale
   const handleOpenModal = (title) => {
     setModalTitle(title);
-    console.log("handleOpenModal called with formData:", formData);
     setModalOpen(true);
   };
   const handleCloseModal = () => {
-    console.log("handleCloseModal called with formData:", formData);
     setModalOpen(false);
   };
 
   // gere les champs du form
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(handleChange);
     setFirstName(formData.firstName);
     setLastName(formData.lastName);
     setFormData((prevFormData) => ({
@@ -61,7 +58,6 @@ const Form = () => {
   };
 
   const handleDateChange = (name, value) => {
-    console.log("handleDateChange called with", name, value);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
   //pour sauvegarder, fermer et appel de la seconde modal
@@ -76,7 +72,6 @@ const Form = () => {
   // pour annulation du form
   const handleCancel = () => {
     handleFormCancel();
-    console.log(handleCancel);
   };
 
   // pour soumettre le form
@@ -84,14 +79,12 @@ const Form = () => {
     e.preventDefault();
     handleOpenModal();
     setActionLabel(true);
-    console.log(setActionLabel);
   };
 
   const handleFormCancel = () => {
     setFormData(initialState);
     setActionLabel(false);
     handleCloseModal();
-    console.log(handleFormCancel);
   };
 
   return (
@@ -218,15 +211,16 @@ const Form = () => {
             <option value="" className="dpt__select">
               -- Select --
             </option>
-            {departments.map((departement) => (
-              <option key={departement.id} value={departement.name}>
-                {departement.name}
+
+            {departments.map(({ id, name }) => (
+              <option key={id} value={name}>
+                {name}
               </option>
             ))}
           </select>
 
           <br />
-          <button className="form__save" onClick={() => handleOpenModal}>
+          <button type="submit" className="form__save">
             Soumettre
           </button>
         </form>

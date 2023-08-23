@@ -25,6 +25,7 @@ const EmployeeSearch = ({ onSearch }) => {
         placeholder="Entrez les lettres du nom..."
         value={searchValue}
         onChange={handleSearch}
+        aria-label="Recherchez un employé"
       />
     </div>
   );
@@ -32,22 +33,4 @@ const EmployeeSearch = ({ onSearch }) => {
 
 export default EmployeeSearch;
 
-// EmployeeSearch    etapes pch 
-// ----------------------------------
-// |           1  props             |
-// |--------------------------------|
-// |   - function 1 : onSearch:     |
-// ----------------------------------
-// |           state 1              |
-// |--------------------------------|
-// |   - searchValue: string        |
-// ----------------------------------
-// |          methods               |
-// |--------------------------------|
-// | -handleSearch(value: string):
-// |  void                          |
-// ----------------------------------
-// |             render()           |
-// |--------------------------------|
-// | <div className="search"></div> |
-// ----------------------------------
+

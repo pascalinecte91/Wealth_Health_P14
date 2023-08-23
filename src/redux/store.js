@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
         employees: [...state.employees, action.payload],
       };
         case "CLEAR_EMPLOYEES":
-          console.log("Action ADD_EMPLOYEE dispatched with payload:", action.payload);
+          console.log("Action CLEAR_EMPLOYEE dispatched with payload:", action.payload);
           return {
             ...state,
             employees: [],
