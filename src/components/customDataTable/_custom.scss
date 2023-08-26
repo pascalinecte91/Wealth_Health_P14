@@ -10,7 +10,6 @@
     }
   }
  
-
 .rdt_TableCol[data-column-id="7"],
 .rdt_TableCol[data-column-id="8"],
 .rdt_TableCol[data-column-id="9"] {
@@ -36,7 +35,6 @@
 }
 .rdt_TableBody{
   @include tablet {
-  // Votre code pour les écrans de tablette ici
   min-width: 900px;
 }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "assets/logo_name.png";
+import logo from "assets/logo_sans_fond.png";
 import { useDispatch, useSelector } from "react-redux";
 import { columns } from "data/column.js";
 import Pagination from "components/pagination/Pagination.js";
@@ -123,7 +123,7 @@ const ListEmployees = () => {
         columns={responsiveColumns}
         data={displayedCurrentItems}
         customStyles={customStyles}
-        className="responsive_dateTable custom_dateTable"
+       
       />
     </>
   );

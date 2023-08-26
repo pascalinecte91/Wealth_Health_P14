@@ -90,6 +90,22 @@
       font-size: 14px;
     }
   }
+  &__group {
+  height: 5rem;
+  margin-top: 1.25rem;
+  max-width: 30%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur parent */
+  height: auto; /* Laissez la hauteur être ajustée en conséquence */
+
+  @include min-max($smartphone, $desktop  ) {
+    height: 3.75rem;
+  }
+  @include min-max($desktop, $big-desktop){
+    max-width: 20%;
+  }
+  @include min-max($smartphone, $tablet){
+    max-width: 40%;
+  }
+}
   
   h1 {
     font-size: 2.813rem;
@@ -165,19 +181,4 @@
 }
 }
 
-.homePage__group {
-  height: 5rem;
-  margin-top: 1.25rem;
-  max-width: 30%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur parent */
-  height: auto; /* Laissez la hauteur être ajustée en conséquence */
 
-  @include min-max($smartphone, $desktop  ) {
-    height: 3.75rem;
-  }
-  @include min-max($desktop, $big-desktop){
-    max-width: 20%;
-  }
-  @include min-max($smartphone, $tablet){
-    max-width: 40%;
-  }
-}
