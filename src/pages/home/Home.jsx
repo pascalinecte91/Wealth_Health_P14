@@ -39,13 +39,11 @@ const Home = () => {
               <NavLink to="./list_employees" className="button__view">View</NavLink>
             </div>
           </div>
-        
           <div className="image-container">
             <img className="image_logo" src={logo} alt="logo HRnet" loading="lazy" width="350" height="140" />
             <img className="image" src={picture_home} alt=" managmnt" loading="lazy" width="400" height="200" />
           </div>
         </main>
-  
       </section>
     </>
   );
