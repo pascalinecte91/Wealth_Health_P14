@@ -33,6 +33,15 @@ $SuperBig : 1660px;
     @content;
   }
 }
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $smartLarge) {
+  
+}
+
 // colors
 
 $green: #458846 ;
