@@ -187,20 +187,15 @@
   border: 1px solid rgb(129, 134, 129);
   box-shadow: 1px 2px rgb(142, 143, 140);
   margin: 10px;
-
   @include min-max($smartphone, $smartLarge ) {
-    gap: inherit;
-
-    width: 38vw;
+   max-width: 70%;
   }
+  @include min-max($tablet, $desktop ) {
+    max-width: 30%;
+   }
 
-  @include min-max($smartLarge, $tablet) {
-    height: 33vh;
-    width: 24vw;
-  }
-
-  @include min-max($desktop, $big-desktop) {
-    height: 33vh;
-    width: 18vw;
-  }
+}
+img.image_logo,
+img.image {
+  width: 100%;
 }

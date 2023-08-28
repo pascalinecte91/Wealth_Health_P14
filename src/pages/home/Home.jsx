@@ -4,11 +4,12 @@ import { NavLink } from "react-router-dom";
 // IMG
 
 import logo_name_smartp from "assets/logo_name_smartp.png";
-import logo_name_tablet from "assets/logo_name_tablet.png";
 import logo_name from "assets/logo_name.png";
-import picture_home_tablet from "assets/picture_home_tablet.png";
-import picture_home from "assets/picture_home.png";
+import logo_name_desktop from "assets/logo_name_desktop.png"
+
 import picture_home_smartph from "assets/picture_home_smartph.png";
+import picture_home from "assets/picture_home.png";
+import picture_home_desktop from "assets/picture_home_desktop.png";
 import groupe_tablet from "assets/groupe_tablet.png";
 import groupe_smartp from "assets/groupe_smartp.png";
 /**
@@ -58,16 +59,16 @@ const Home = () => {
 
             <div className="image-container">
                  {/* image LOGO */}
-              <picture>
-                <source media="(min-width: 768px)" srcSet={logo_name_tablet} />
-                <source media="(min-width: 475px)" srcSet={logo_name_smartp} />
-                <img className="image_logo" src={logo_name} alt="logo HRnet" loading="lazy" />
-              </picture>
-              <picture>
-                <source media="(min-width: 768px)" srcSet={picture_home_tablet} />
-                <source media="(min-width: 525px)" srcSet={picture_home_smartph} />
-                <img className="image" src={picture_home} alt="managmnt" loading="lazy" />
-              </picture>
+                 <picture>
+  <source media="(min-width: #{$smartphone})" srcSet={logo_name_smartp} />
+  <source media="(min-width: #{$desktop})" srcSet={logo_name_desktop} />
+  <img className="image_logo" src={logo_name_smartp} alt="logo HRnet" loading="lazy" />
+</picture>
+<picture>
+  <source media="(min-width: #{$smartphone})" srcSet={picture_home_smartph} />
+  <source media="(min-width: #{$desktop})" srcSet={picture_home_desktop} />
+  <img className="image" src={picture_home} alt="managmnt" loading="lazy" />
+</picture>
             </div>
           </main>
         </section>
