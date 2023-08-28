@@ -92,7 +92,7 @@ const ListEmployees = () => {
           <img className="list__logo" src={logo} alt="logo appli" width={200} height={170} />
           <div className="list__change">
             <h2 className="list__title">List Employee</h2>
-            <button onClick={handleClearEmployees} className="list__delete">  <FaTrashAlt /></button>
+            <button onClick={handleClearEmployees} className="list__delete" aria-label="Name"><FaTrashAlt /></button>
           </div>
       </section>
 
