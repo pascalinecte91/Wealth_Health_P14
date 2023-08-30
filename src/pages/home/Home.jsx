@@ -4,14 +4,14 @@ import { NavLink } from "react-router-dom";
 // IMG
 
 import logo_name_smartp from "assets/logo_name_smartp.png";
+import logo_name_tablet from "assets/logo_name_desktop.png";
 import logo_name from "assets/logo_name.png";
-import logo_name_desktop from "assets/logo_name_desktop.png"
-
 import picture_home_smartph from "assets/picture_home_smartph.png";
 import picture_home from "assets/picture_home.png";
-import picture_home_desktop from "assets/picture_home_desktop.png";
-import groupe_tablet from "assets/groupe_tablet.png";
+import picture_home_tablet from "assets/picture_home_desktop.png";
+import groupe_desktop from "assets/groupe_desktop.png";
 import groupe_smartp from "assets/groupe_smartp.png";
+import groupe from "assets/groupe.png";
 /**
  * @Composant de la page d'accueil.
  * @returns {JSX.Element} Composant de la page d'accueil.
@@ -37,38 +37,30 @@ const Home = () => {
                 <span className="homePage__greenSpan">
                   <p className="homePage__empl"> Your employees</p>
                 </span>
-
                 {/* image groupe */}
-                <picture>
-                  <source media="(min-width: 768px)" srcSet={groupe_tablet} />
-                  <img className="homePage__group" src={groupe_smartp} alt="logo HRnet" loading="lazy" />
-                </picture>
+                <img
+                  src={groupe} srcset={`${groupe_smartp}, ${groupe_desktop} 525w`}
+                  alt="" loading='lazy'
+                />
               </div>
               <p className="homePage__subtitle">
                 Join us in creating your employee list
               </p>
               <div className="button">
-                <NavLink to="./add_employee" className="button__add">
+                <NavLink to="/add_employee" className="button__add">
                   Create
                 </NavLink>
-                <NavLink to="./list_employees" className="button__view">
+                <NavLink to="/list_employees" className="button__view">
                   View
                 </NavLink>
               </div>
             </div>
 
             <div className="image-container">
-                 {/* image LOGO */}
-                 <picture>
-  <source media="(min-width: #{$smartphone})" srcSet={logo_name_smartp} />
-  <source media="(min-width: #{$desktop})" srcSet={logo_name_desktop} />
-  <img className="image_logo" src={logo_name_smartp} alt="logo HRnet" loading="lazy" />
-</picture>
-<picture>
-  <source media="(min-width: #{$smartphone})" srcSet={picture_home_smartph} />
-  <source media="(min-width: #{$desktop})" srcSet={picture_home_desktop} />
-  <img className="image" src={picture_home} alt="managmnt" loading="lazy" />
-</picture>
+              {/* image LOGO */}
+
+              <img src={logo_name} srcset={`${logo_name_smartp}, ${logo_name_tablet}`} loading='lazy' alt="logo" />
+              <img src={picture_home} srcset={`${picture_home_smartph}, ${picture_home_tablet}`} loading='lazy' alt="home"/>
             </div>
           </main>
         </section>

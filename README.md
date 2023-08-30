@@ -97,6 +97,9 @@ The company uses an internal web application called HRnet, which manages employe
 - npm run docs
 - npm run deploy ( github page)
 
+## Publication sur npm 
+[banby-modal-customize-react](https://www.npmjs.com/package/banby-modal-customize-react)
+
 
 
 
