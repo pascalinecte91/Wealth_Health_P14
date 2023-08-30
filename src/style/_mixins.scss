@@ -18,7 +18,7 @@ $SuperBig : 1660px;
       @content;
     }
   }
-    @mixin desk {
+    @mixin desktop {
       @media only screen and (min-width: $desktop) {
         @content;
       }
@@ -33,6 +33,14 @@ $SuperBig : 1660px;
     @content;
   }
 }
+@mixin smartphone{
+  @media only screen and (max-width: $smartphone) {
+    @content;
+  }
+}
+
+
+
 // colors
 
 $green: #458846 ;

@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
-import logo  from "assets/logo_name.png";
-import picture_home from "assets/picture_home.png"
 import Spinner from "components/spinner/Spinner.js";
-import groupe from "assets/groupe.png";
 import { NavLink } from "react-router-dom";
+// assets
+import logo_name_smartp from "assets/logo_name_smartp.png";
+import logo_name_tablet from "assets/logo_name_desktop.png";
+import logo_name from "assets/logo_name.png";
+import picture_home_smartph from "assets/picture_home_smartph.png";
+import picture_home from "assets/picture_home.png";
+import picture_home_tablet from "assets/picture_home_desktop.png";
+import groupe_desktop from "assets/groupe_desktop.png";
+import groupe_smartp from "assets/groupe_smartp.png";
+import groupe from "assets/groupe.png";
 /**
  * @Composant de la page d'accueil.
  * @returns {JSX.Element} Composant de la page d'accueil.
@@ -11,42 +18,60 @@ import { NavLink } from "react-router-dom";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
+  // Effet pour simuler un changement d'état de chargement après un délai.
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    
     }, 1000);
+  }, []);
+
+  // Effet pour désactiver le défilement sur l'élément body.
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.classList.add("no_scroll");
+
+    return () => {
+      body.classList.remove("no_scroll");
+    };
   }, []);
   if (isLoading) {
     return <Spinner />;
   } else {
+    return (
+      <>
+        <section className="homePage no_scroll">
+          <main className="homePage__current">
+            <div className="homePage__content">
+              <div className="homePage__infos">
+                <h1 className="homePage__title">HRNet the app that manage </h1>
+                <span className="homePage__greenSpan">
+                  <p className="homePage__empl"> Your employees</p>
+                </span>
+                {/* image groupe */}
+                <img src={groupe} srcset={`${groupe_smartp}, ${groupe_desktop} 525w`} alt="groupe employees" loading='lazy'/>
+              </div>
+              <p className="homePage__subtitle">
+                Join us in creating your employee list
+              </p>
+              <div className="button">
+                <NavLink to="/add_employee" className="button__add">
+                  Create
+                </NavLink>
+                <NavLink to="/list_employees" className="button__view">
+                  View
+                </NavLink>
+              </div>
+            </div>
 
-  return (
-    <>
-      <section className="homePage">
- 
-        <main className="homePage__current">
-          <div className="homePage__content">
-            <div className="homePage__infos">
-            <h1 className="homePage__title">HRNet the app that manage </h1>
-              <span className="homePage__greenSpan"> 
-                <p className="homePage__empl"> Your employees</p></span>  
-                <img className="homePage__group" src={groupe} alt="logo HRnet" loading="lazy" width="200" height="100" />
+            <div className="image-container">
+              {/* image LOGO */}
+              <img src={logo_name} srcset={`${logo_name_smartp}, ${logo_name_tablet}`} loading='lazy' alt="logo" />
+              <img src={picture_home} srcset={`${picture_home_smartph}, ${picture_home_tablet}`} loading='lazy' alt="home"/>
             </div>
-            <p className="homePage__subtitle">Join us in creating your employee list</p>
-            <div className="button">
-              <NavLink to="./add_employee" className="button__add">Create</NavLink>
-              <NavLink to="./list_employees" className="button__view">View</NavLink>
-            </div>
-          </div>
-          <div className="image-container">
-            <img className="image_logo" src={logo} alt="logo HRnet" loading="lazy" width="350" height="140" />
-            <img className="image" src={picture_home} alt=" managmnt" loading="lazy" width="400" height="200" />
-          </div>
-        </main>
-      </section>
-    </>
-  );
+          </main>
+        </section>
+      </>
+    );
   }
 };
 

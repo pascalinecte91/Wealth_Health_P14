@@ -3,7 +3,7 @@
   list-style: none;
   align-items: center;
   order: 2;
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
 
 }
 
@@ -45,6 +45,9 @@
     @include min-max($smartphone, $tablet) {
     font-size: 15px;
     display: none;
+  }
+  span {
+    font-size: 13px;
   }
 }
   &__lot {

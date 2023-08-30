@@ -79,6 +79,7 @@ const Form = () => {
     e.preventDefault();
     handleOpenModal();
     setActionLabel(true);
+    console.log(setActionLabel);
   };
 
   const handleFormCancel = () => {

@@ -22,12 +22,11 @@ const ListEmployees = () => {
 
   const [searchValue, setSearchValue] = useState("");
 
-  const employees = useSelector((state) => state.employees);// new employe create form
-  const mockEmployed = useSelector((state) => state.mockEmployed); // mocked
+  const employees = useSelector((state) => state.employees);
+  const mockEmployed = useSelector((state) => state.mockEmployed); 
 
-  console.log("employees:", employees);
-  console.log("le fichier mock:", mockEmployed);
-
+  // console.log("employees:", employees);
+  // console.log("le fichier mock:", mockEmployed);
 
   /**
    * Gère la recherche d'employés en fonction de la valeur de recherche.
@@ -92,7 +91,7 @@ const ListEmployees = () => {
           <img className="list__logo" src={logo} alt="logo appli" width={200} height={170} />
           <div className="list__change">
             <h2 className="list__title">List Employee</h2>
-            <button onClick={handleClearEmployees} className="list__delete">  <FaTrashAlt /></button>
+            <button onClick={handleClearEmployees} className="list__delete" aria-label="Name"><FaTrashAlt /></button>
           </div>
       </section>
 
