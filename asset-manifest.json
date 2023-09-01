@@ -1,17 +1,35 @@
 {
   "files": {
-    "main.css": "/Wealth_Health_P14/static/css/main.b1bbc909.css",
-    "main.js": "/Wealth_Health_P14/static/js/main.29a731b3.js",
-    "static/media/picture_home.png": "/Wealth_Health_P14/static/media/picture_home.d89af8b120de33989384.png",
-    "static/media/groupe.png": "/Wealth_Health_P14/static/media/groupe.e9af9fa5b716e986838b.png",
-    "static/media/logo_name.png": "/Wealth_Health_P14/static/media/logo_name.068e046af20ce817b226.png",
-    "static/media/logo_sans_fond.png": "/Wealth_Health_P14/static/media/logo_sans_fond.c3ff3c52b17173c4d79f.png",
-    "index.html": "/Wealth_Health_P14/index.html",
-    "main.b1bbc909.css.map": "/Wealth_Health_P14/static/css/main.b1bbc909.css.map",
-    "main.29a731b3.js.map": "/Wealth_Health_P14/static/js/main.29a731b3.js.map"
+    "main.css": "/static/css/main.cd428f87.css",
+    "main.js": "/static/js/main.9cf66ea0.js",
+    "static/js/93.e20720f7.chunk.js": "/static/js/93.e20720f7.chunk.js",
+    "static/css/255.5796498e.chunk.css": "/static/css/255.5796498e.chunk.css",
+    "static/js/255.4600742f.chunk.js": "/static/js/255.4600742f.chunk.js",
+    "static/js/202.62b32e97.chunk.js": "/static/js/202.62b32e97.chunk.js",
+    "static/js/135.ba0bf0d9.chunk.js": "/static/js/135.ba0bf0d9.chunk.js",
+    "static/js/448.a12faa2d.chunk.js": "/static/js/448.a12faa2d.chunk.js",
+    "static/js/952.d47f3d42.chunk.js": "/static/js/952.d47f3d42.chunk.js",
+    "static/media/picture_home_desktop.png": "/static/media/picture_home_desktop.92a15e0c2b3dd93b148b.png",
+    "static/media/picture_home_smartph.png": "/static/media/picture_home_smartph.acce5dd6b489e002ad4c.png",
+    "static/media/logo_name_desktop.png": "/static/media/logo_name_desktop.c242683a66709e8a00e2.png",
+    "static/media/picture_home.png": "/static/media/picture_home.170fddbfdc2c7c5a4b20.png",
+    "static/media/groupe_desktop.png": "/static/media/groupe_desktop.336095c39a2a23e726d9.png",
+    "static/media/logo_name.png": "/static/media/logo_name.3ec46df703a3ac8fe8ae.png",
+    "static/media/logo_name_smartp.png": "/static/media/logo_name_smartp.1977787c33cc7eddd37e.png",
+    "static/media/groupe.png": "/static/media/groupe.73caeedbb6add3ff1a22.png",
+    "index.html": "/index.html",
+    "main.cd428f87.css.map": "/static/css/main.cd428f87.css.map",
+    "main.9cf66ea0.js.map": "/static/js/main.9cf66ea0.js.map",
+    "93.e20720f7.chunk.js.map": "/static/js/93.e20720f7.chunk.js.map",
+    "255.5796498e.chunk.css.map": "/static/css/255.5796498e.chunk.css.map",
+    "255.4600742f.chunk.js.map": "/static/js/255.4600742f.chunk.js.map",
+    "202.62b32e97.chunk.js.map": "/static/js/202.62b32e97.chunk.js.map",
+    "135.ba0bf0d9.chunk.js.map": "/static/js/135.ba0bf0d9.chunk.js.map",
+    "448.a12faa2d.chunk.js.map": "/static/js/448.a12faa2d.chunk.js.map",
+    "952.d47f3d42.chunk.js.map": "/static/js/952.d47f3d42.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1bbc909.css",
-    "static/js/main.29a731b3.js"
+    "static/css/main.cd428f87.css",
+    "static/js/main.9cf66ea0.js"
   ]
 }
