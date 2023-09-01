@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import DatePicker from "components/datePicker/DatePicker";
 import { states } from "data/states.js";
 import departments from "data/departments";
-import { Modal } from "banby-modal-customize-react";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "redux/actions.js";
+// external components
+import DatePicker from "components/datePicker/DatePicker";
+import { Modal } from "banby-modal-customize-react";
 
 /**
  * @Composant Form formulaire pour ajouter un employé.
@@ -26,6 +27,8 @@ const Form = () => {
   };
   // État du formulaire contenant les données saisies
   const [formData, setFormData] = useState(initialState);
+
+  // Réinitialise le formulaire avec les valeurs par défaut.
   const resetForm = () => {
     setFormData(initialState);
   };
@@ -37,16 +40,21 @@ const Form = () => {
   const [modalTitle, setModalTitle] = useState("");
   const [secondModalOpen, setSecondModalOpen] = useState(false);
 
-  //fonction pour gerer la 1ere modale
+  // fonction pour gerer la 1ere modale
   const handleOpenModal = (title) => {
     setModalTitle(title);
     setModalOpen(true);
   };
+
+  // Ferme la première modal.
   const handleCloseModal = () => {
     setModalOpen(false);
   };
 
-  // gere les champs du form
+  /**
+   * Gère le changement de valeur d'un champ du formulaire.
+   * @param {Object} e - L'événement de changement.
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFirstName(formData.firstName);
@@ -57,10 +65,17 @@ const Form = () => {
     }));
   };
 
+  /**
+   * Gère le changement de valeur d'un champ de date dans le formulaire.
+   * @param {string} name - Le nom du champ de date à mettre à jour dans formData.
+   * @param {string} value - La nouvelle valeur du champ de date.
+   */
   const handleDateChange = (name, value) => {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    //fn prend en param l'etat precedent et cree un nouvel obj
   };
-  //pour sauvegarder, fermer et appel de la seconde modal
+
+  //pour sauvegarder, fermer et appeler la seconde modal
   const handleSave = () => {
     dispatch(addEmployee(formData));
     resetForm();
@@ -69,12 +84,12 @@ const Form = () => {
     setModalTitle("Employé enregistré");
     setSecondModalOpen(true);
   };
-  // pour annulation du form
+  // pour annuler le formulaire
   const handleCancel = () => {
     handleFormCancel();
   };
 
-  // pour soumettre le form
+  // pour soumettre le formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
     handleOpenModal();
@@ -82,6 +97,9 @@ const Form = () => {
     console.log(setActionLabel);
   };
 
+  /**
+   * Réinitialise le formulaire et ferme la première modal.
+   */
   const handleFormCancel = () => {
     setFormData(initialState);
     setActionLabel(false);

@@ -1,19 +1,24 @@
-/**
- * @Définition de la colonne "First Name".
- * Cette colonne affiche le prénom de l'employé avec la première lettre en majuscule.
- * La colonne est triable par défaut.
- *
- * @type {import("react-data-table-component").Column<object>}
- */
+
 export const columns = [
-  // props definie sur true pour definir le tri sur la colonne en question
+  /**
+   * Colonne du prénom.  (Les commentaires pour les autres colonnes suivent le même modèle)
+   * @type {object}
+   * @property {string} name - Le nom de la colonne ("First Name").
+   * @property {function} selector - Fonction pour extraire la valeur de la colonne à partir de la ligne.
+   * @property {boolean} sortable - Indique si la colonne est triable.
+   * @property {function} sortFunction - Fonction de tri personnalisée pour trier les valeurs de la colonne.
+   * @property {function} cell - Fonction pour afficher le contenu de la cellule de la colonne.
+   */
   {
     name: "First Name",
     selector: (row) => row.firstName,
     sortable: true,
     sortFunction: (a, b) => a.firstName.localeCompare(b.firstName),
-    cell: (row) => <span>{row.firstName.charAt(0).toUpperCase() + row.firstName.slice(1)}</span>,
-
+    cell: (row) => (
+      <span>
+        {row.firstName.charAt(0).toUpperCase() + row.firstName.slice(1)}
+      </span>
+    ),
   },
   {
     name: "Last Name",
@@ -22,16 +27,6 @@ export const columns = [
     sortFunction: (a, b) => a.lastName.localeCompare(b.lastName),
   },
   {
-    /**
-     *
-     * @param {*} a  objet à comparer
-     * @param {*} b  objet à comparer
-     * @props { starDate } string format
-     * @method reverse  pour avoir le meme format des dates js
-     * @method join pour refaire la chaine en inserant - aaa-mm-jj
-     * @objet Date  cree  l objet avec date de depart
-     * @returns si false: a date te plus ancienne, si true:  inverse si null = identique
-     */
     name: "Start Date",
     selector: (row) => row.startDate,
     sortable: true,
@@ -85,5 +80,3 @@ export const columns = [
     sortFunction: (a, b) => a.zipCode.localeCompare(b.zipCode),
   },
 ];
-  
-

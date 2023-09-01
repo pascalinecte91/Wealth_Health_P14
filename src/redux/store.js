@@ -19,7 +19,6 @@ const initialState = {
   mockEmployed: mockEmployed,
 };
 
-
 /**
  * Reducer Redux pour gérer les actions et mettre à jour l'état du store.
  * @param {InitialState} state - L'état initial du store.
@@ -27,30 +26,35 @@ const initialState = {
  * @returns {InitialState} Le nouvel état mis à jour du store.
  */
 const reducer = (state = initialState, action) => {
-  switch (action.type) { // update eventuel
+  switch (
+    action.type // update eventuel
+  ) {
     // case "SET_EMPLOYEE":
     //   return {
     //     ...state,
     //     employee: action.employee,
     //   };
     case "ADD_EMPLOYEE":
-      console.log("Action ADD_EMPLOYEE dispatched with payload:", action.payload);
+      //console.log("Action ADD_EMPLOYEE dispatched with payload:", action.payload);
       return {
         ...state,
         employees: [...state.employees, action.payload],
       };
-        case "CLEAR_EMPLOYEES":
-          console.log("Action CLEAR_EMPLOYEE dispatched with payload:", action.payload);
-          return {
-            ...state,
-            employees: [],
-          };
-      default:
-        return state;
-    }
+    case "CLEAR_EMPLOYEES":
+      console.log(
+        "Action CLEAR_EMPLOYEE dispatched with payload:",
+        action.payload
+      );
+      return {
+        ...state,
+        employees: [],
+      };
+    default:
+      return state;
   }
+};
 
-  /**
+/**
  * Configuration pour la persistance du store Redux.
  * @typedef {Object} PersistConfig
  * @property {string} key - où les données sont stockées.
@@ -60,7 +64,7 @@ const reducer = (state = initialState, action) => {
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["register"],
+  blacklist: ["register"], // Les clés à exclure de la persistance
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -69,7 +73,8 @@ const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, 
+      serializableCheck: false, // permet de stocker des objets plus complexes 
+      //non serialisable dans le store sans porvoquer d'erreur
     }),
 });
 

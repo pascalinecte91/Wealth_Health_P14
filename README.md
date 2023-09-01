@@ -95,8 +95,8 @@ The company uses an internal web application called HRnet, which manages employe
 - npm start
 - Local:  http://localhost:3000 
 - npm run docs
-- npm run deploy ( github page)
 - npm run build
+- npm run deploy ( option githubPage)
 
 ## Publication sur npm 
 [banby-modal-customize-react](https://www.npmjs.com/package/banby-modal-customize-react)

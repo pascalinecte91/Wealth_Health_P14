@@ -4,14 +4,12 @@
   align-items: center;
   order: 2;
   margin-left: 1.5rem;
-
 }
 
 .page-item a {
   display: block;
   padding: 8px 10px;
   text-decoration: none;
-
 }
 
 .page-item:hover a {
@@ -43,13 +41,13 @@
   &__toggle {
     display: flex;
     @include min-max($smartphone, $tablet) {
-    font-size: 15px;
-    display: none;
+      font-size: 15px;
+      display: none;
+    }
+    span {
+      font-size: 13px;
+    }
   }
-  span {
-    font-size: 13px;
-  }
-}
   &__lot {
     display: flex;
     align-items: center;
@@ -60,16 +58,16 @@
     @include min-max($smartphone, $smartLarge) {
       font-size: 11px;
     }
-}
-
-&__number {
-  @include min-max($smartphone, $smartLarge) {
-    display: none;
-}
-}
   }
 
-  .page {
-    padding-left: 5px;
-    margin-left: 10px;
+  &__number {
+    @include min-max($smartphone, $smartLarge) {
+      display: none;
+    }
   }
+}
+
+.page {
+  padding-left: 5px;
+  margin-left: 10px;
+}

@@ -1,7 +1,9 @@
-import React, { useState, useRef, useEffect } from "react"; // Importation des hooks useState, useRef et useEffect de React
-import Calendar from "react-calendar"; // Importation du composant Calendar
-import "react-calendar/dist/Calendar.css"; // Importation des styles CSS du composant Calendar
-import { FaCalendarAlt as CalendarIcon } from "react-icons/fa"; // Importation de l'icône du calendrier depuis les react-icons
+import React, { useState, useRef, useEffect } from "react"; 
+import { FaCalendarAlt as CalendarIcon } from "react-icons/fa"; 
+// external components
+import Calendar from "react-calendar"; 
+import "react-calendar/dist/Calendar.css"; 
+
 
 /**
  * @Composant fonctionnel React qui affiche un champ de saisie de date avec un calendrier.
@@ -60,17 +62,15 @@ const DatePicker = ({
   useEffect(() => {
     // handleClickOutside va détecter les clics en dehors du calendrier.
     // handleClickOutside  détecte si on a cliqué en dehors du calendrier (calendarDate.current).
-  // Si oui, le calendrier est caché  la valeur à false. 
-//ferme le calendrier auclique en dehors.
+    // Si oui, le calendrier est caché  la valeur à false.
+    //ferme le calendrier auclique en dehors.
 
     const handleClickOutside = (e) => {
- 
       if (calendarDate.current && !calendarDate.current.contains(e.target)) {
         setVisible(false); // calendrier false visible ou pas
-    // calendarDate.current.contains(e.target)va si l'élément qu on  a cliqué (e.target)
-    // est à l'intérieur  du calendrier (calendarDate.current). 
+        // calendarDate.current.contains(e.target)va si l'élément qu on  a cliqué (e.target)
+        // est à l'intérieur  du calendrier (calendarDate.current).
       }
-    
     };
     // j'ajoute un ecouteur d'evenment en utilisant mousedown pour le clic souris
     document.addEventListener("mousedown", handleClickOutside);

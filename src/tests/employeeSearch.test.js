@@ -3,8 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import EmployeeSearch from "components/search/EmployeeSearch.js";
 
 describe("Component EmployeeSearch", () => {
-  
-   // vérifier si le composant EmployeeSearch est rendu correctement.
+  // vérifier si le composant EmployeeSearch est rendu correctement.
   it("devrait rendre correctement le composant EmployeeSearch", () => {
     // Crée une fonction simulée pour onSearch
     const onSearch = jest.fn();

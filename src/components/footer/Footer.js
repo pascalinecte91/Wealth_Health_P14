@@ -1,22 +1,20 @@
-import React from 'react';
-
+import React from "react";
 /**
- * @component fonctionnel React qui affiche le copyright et l'année actuelle.
- * @example
- * return (
- *   <Footer />
- * )
+ * Composant du pied de page.
+ * Ce composant affiche le copyright avec l'année actuelle.
+ * @returns {JSX.Element} 
  */
+
 const Footer = () => {
-   /**
+  /**
    * Obtient l'année actuelle
    * @type {number}
    */
   const currentYear = new Date().getFullYear();
 
   return (
-    <section className="footer" >
-      <p className="footer__content">Copyright {currentYear} WEALTH  HEALTH</p>
+    <section className="footer">
+      <p className="footer__content">Copyright {currentYear} WEALTH HEALTH</p>
     </section>
   );
 };

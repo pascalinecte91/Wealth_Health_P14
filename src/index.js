@@ -7,7 +7,7 @@ import App from "./App";
 
 /**
  * Fonction principale pour rendre l'application React.
- * Outils pouvant améliorer la robustesse, la performance et la maintenabilité de l'application. 
+ * Outils pouvant améliorer la robustesse, la performance et la maintenabilité de l'application.
  */
 createRoot(document.getElementById("root")).render(
   // React.StrictMode détecte les problèmes potentiels

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://pascalinecte91.github.io/",
+  "homepage": "https://pascalinecte91.github.io/Wealth_Health_P14/#/",
   "name": "wealth_health",
   "version": "0.1.0",
   "private": true,
@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --verbose",
+      "test": "react-scripts test src/tests/pagination.test.js src/tests/employeeSearch.test.js",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "docs": "jsdoc src -d docs"

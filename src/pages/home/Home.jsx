@@ -29,17 +29,13 @@ const Home = () => {
   useEffect(() => {
     const body = document.querySelector("body");
     body.classList.add("no_scroll");
-
-    return () => {
-      body.classList.remove("no_scroll");
-    };
   }, []);
   if (isLoading) {
     return <Spinner />;
   } else {
     return (
       <>
-        <section className="homePage no_scroll">
+        <section className="homePage">
           <main className="homePage__current">
             <div className="homePage__content">
               <div className="homePage__infos">
@@ -48,7 +44,12 @@ const Home = () => {
                   <p className="homePage__empl"> Your employees</p>
                 </span>
                 {/* image groupe */}
-                <img src={groupe} srcset={`${groupe_smartp}, ${groupe_desktop} 525w`} alt="groupe employees" loading='lazy'/>
+                <img
+                  src={groupe}
+                  srcSet={`${groupe_smartp}, ${groupe_desktop} 225w`}
+                  alt="groupe employees"
+                  loading="lazy"
+                />
               </div>
               <p className="homePage__subtitle">
                 Join us in creating your employee list
@@ -65,8 +66,18 @@ const Home = () => {
 
             <div className="image-container">
               {/* image LOGO */}
-              <img src={logo_name} srcset={`${logo_name_smartp}, ${logo_name_tablet}`} loading='lazy' alt="logo" />
-              <img src={picture_home} srcset={`${picture_home_smartph}, ${picture_home_tablet}`} loading='lazy' alt="home"/>
+              <img
+                src={logo_name}
+                srcSet={`${logo_name_smartp}, ${logo_name_tablet}`}
+                loading="lazy"
+                alt="logo"
+              />
+              <img
+                src={picture_home}
+                srcSet={`${picture_home_smartph}, ${picture_home_tablet}`}
+                loading="lazy"
+                alt="home"
+              />
             </div>
           </main>
         </section>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// external component
 import SearchBox from "react-search-box";
 
 /**
@@ -10,11 +11,10 @@ const EmployeeSearch = ({ onSearch }) => {
   // État local pour la valeur de recherche
   const [searchValue, setSearchValue] = useState("");
 
-
   // Gère les modifications de la valeur de recherche.
   const handleSearch = (value) => {
-    setSearchValue(value);// Met à jour la valeur de recherche dans l'état local.
-    onSearch(value);// Appelle la fonction de rappel fournie avec la nouvelle valeur de recherche.
+    setSearchValue(value); // Met à jour la valeur de recherche dans l'état local.
+    onSearch(value); // Appelle la fonction de rappel fournie avec la nouvelle valeur de recherche.
   };
 
   return (
@@ -32,5 +32,3 @@ const EmployeeSearch = ({ onSearch }) => {
 };
 
 export default EmployeeSearch;
-
-

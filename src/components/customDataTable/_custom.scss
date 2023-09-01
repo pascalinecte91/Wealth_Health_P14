@@ -35,21 +35,29 @@
 
 .rdt_TableBody {
   @include tablet {
-    min-width: 900px; 
+    min-width: 900px;
   }
+
   @include min-max($smartphone, $tablet) {
     .bPokRt:not(:last-of-type) {
       border-bottom-style: none;
     }
-  }
-  @include min-max($smartphone, $smartLarge) {
-   min-width: 500px;
+
+    @include min-max($smartphone, $smartLarge) {
+      min-width: 500px;
+    }
   }
 }
+
 .eAeGBz.rdt_TableHeadRow {
-  font-size: 9px;
+  font-size: 13px;
 }
-.rdt_TableCol_Sortable[data-column-id="5"]  {
+
+.sc-csmVar {
+  text-overflow: inherit !important;
+}
+
+.rdt_TableCol_Sortable[data-column-id="5"] {
   @include min-max($smartphone, $smartLarge ) {
     display: none;
   }
