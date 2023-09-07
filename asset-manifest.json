@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/Wealth_Health_P14/static/css/main.0439ddb0.css",
-    "main.js": "/Wealth_Health_P14/static/js/main.591c144b.js",
+    "main.js": "/Wealth_Health_P14/static/js/main.846a3302.js",
     "static/js/93.e7098274.chunk.js": "/Wealth_Health_P14/static/js/93.e7098274.chunk.js",
     "static/css/255.5796498e.chunk.css": "/Wealth_Health_P14/static/css/255.5796498e.chunk.css",
-    "static/js/255.602325c2.chunk.js": "/Wealth_Health_P14/static/js/255.602325c2.chunk.js",
-    "static/js/202.f9829276.chunk.js": "/Wealth_Health_P14/static/js/202.f9829276.chunk.js",
+    "static/js/255.08bfc4a8.chunk.js": "/Wealth_Health_P14/static/js/255.08bfc4a8.chunk.js",
+    "static/js/202.6692cb91.chunk.js": "/Wealth_Health_P14/static/js/202.6692cb91.chunk.js",
     "static/js/135.ba0bf0d9.chunk.js": "/Wealth_Health_P14/static/js/135.ba0bf0d9.chunk.js",
     "static/js/448.a12faa2d.chunk.js": "/Wealth_Health_P14/static/js/448.a12faa2d.chunk.js",
     "static/js/952.72e548d3.chunk.js": "/Wealth_Health_P14/static/js/952.72e548d3.chunk.js",
@@ -19,17 +19,17 @@
     "static/media/groupe.png": "/Wealth_Health_P14/static/media/groupe.73caeedbb6add3ff1a22.png",
     "index.html": "/Wealth_Health_P14/index.html",
     "main.0439ddb0.css.map": "/Wealth_Health_P14/static/css/main.0439ddb0.css.map",
-    "main.591c144b.js.map": "/Wealth_Health_P14/static/js/main.591c144b.js.map",
+    "main.846a3302.js.map": "/Wealth_Health_P14/static/js/main.846a3302.js.map",
     "93.e7098274.chunk.js.map": "/Wealth_Health_P14/static/js/93.e7098274.chunk.js.map",
     "255.5796498e.chunk.css.map": "/Wealth_Health_P14/static/css/255.5796498e.chunk.css.map",
-    "255.602325c2.chunk.js.map": "/Wealth_Health_P14/static/js/255.602325c2.chunk.js.map",
-    "202.f9829276.chunk.js.map": "/Wealth_Health_P14/static/js/202.f9829276.chunk.js.map",
+    "255.08bfc4a8.chunk.js.map": "/Wealth_Health_P14/static/js/255.08bfc4a8.chunk.js.map",
+    "202.6692cb91.chunk.js.map": "/Wealth_Health_P14/static/js/202.6692cb91.chunk.js.map",
     "135.ba0bf0d9.chunk.js.map": "/Wealth_Health_P14/static/js/135.ba0bf0d9.chunk.js.map",
     "448.a12faa2d.chunk.js.map": "/Wealth_Health_P14/static/js/448.a12faa2d.chunk.js.map",
     "952.72e548d3.chunk.js.map": "/Wealth_Health_P14/static/js/952.72e548d3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0439ddb0.css",
-    "static/js/main.591c144b.js"
+    "static/js/main.846a3302.js"
   ]
 }
